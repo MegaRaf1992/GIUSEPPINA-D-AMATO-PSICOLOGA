@@ -1,7 +1,7 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #C5D3B4;
-  color: #333;
+  font-family: 'Raleway', sans-serif;
+  background-color: #C5D3B4; /* verde salvia chiaro */
+  color: #444444; /* grigio grafite */
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -9,15 +9,16 @@ body {
 
 /* Header */
 header {
-  background-color: #59788E; /* blu psicologico */
+  background-color: #A3B18A; /* verde salvia medio */
   color: white;
   padding: 30px;
   text-align: center;
+  font-family: 'Playfair Display', serif;
 }
 
 /* Navigazione */
 nav {
-  background: #eaeaea;
+  background: #E9E7E1; /* beige medio */
   padding: 10px;
   text-align: center;
 }
@@ -35,8 +36,9 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #333;
-  font-weight: bold;
+  color: #444444;
+  font-weight: 500;
+  font-family: 'Raleway', sans-serif;
 }
 
 /* Sezioni */
@@ -44,19 +46,25 @@ section {
   padding: 30px;
   max-width: 800px;
   margin: auto;
-  background: white;
+  background: #FBFAF9; /* beige chiaro */
   margin-top: 20px;
   border-radius: 6px;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
+section h2 
+{font-family: 'Playfair Display', serif;
+  color: #444444;
+}
+
 /* Footer */
 footer {
-  background: #333;
+  background: #444444; /* grigio grafite */
   color: white;
   text-align: center;
   padding: 15px;
   margin-top: 40px;
+  font-family: 'Raleway', sans-serif;
 }
 
 
