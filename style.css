@@ -54,14 +54,28 @@ img          { width: 100%; display: block; border-radius: var(--radius); }
 }
 
 /* 5. HERO */
+/* signature inside the hero banner */
 .hero {
-  position: relative; min-height: 75vh; display: flex; align-items: center;
-  background: url("images/hero.jpg") center/cover fixed;
+  position: relative;          /* establishes the containing block */
 }
-.hero .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
-.hero-content { position: relative; color: #fff; text-align: center; max-width: 750px; }
-.hero p { font-size: 1.3rem; margin: 1.25rem auto 2rem; }
 
+.hero-signature {
+  position: absolute;
+  bottom: 1.5rem;              /* distance from bottom edge */
+  left: 1.5rem;                /* distance from left edge */
+  font-family: var(--serif);   /* same elegant serif as headings */
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;                 /* white text on dark overlay */
+  letter-spacing: 0.3px;
+  white-space: nowrap;         /* keeps it on one line */
+  z-index: 2;                  /* sits above the overlay */
+}
+
+/* optional: shrink a bit on very small screens */
+@media (max-width: 480px) {
+  .hero-signature { font-size: 0.85rem; }
+}
 /* 6. BUTTONS */
 .btn-primary, .btn-secondary {
   display: inline-block; padding: 0.9rem 2.1rem; font-weight: 600;
@@ -111,5 +125,6 @@ details p { margin-top: 0.7rem; }
 .site-footer { background: #f1f1f1; padding: 2rem 0; font-size: 0.9rem; }
 .footer-flex { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
 .credits { opacity: 0.75; }
+
 
 
