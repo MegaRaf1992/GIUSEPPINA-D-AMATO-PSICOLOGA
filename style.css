@@ -112,5 +112,16 @@ details p { margin-top: 0.7rem; }
 .footer-flex { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
 .credits { opacity: 0.75; }
 
+.about-img img { border-radius: 50%; object-fit: cover; }
+.about-img {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+.about-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.about-img img { box-shadow: 0 8px 16px rgba(0,0,0,.1); }
 
 
