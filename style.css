@@ -1,3 +1,4 @@
+/* 1. BASIC RESET & VARIABLES */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -110,3 +111,4 @@ details p { margin-top: 0.7rem; }
 .site-footer { background: #f1f1f1; padding: 2rem 0; font-size: 0.9rem; }
 .footer-flex { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
 .credits { opacity: 0.75; }
+
