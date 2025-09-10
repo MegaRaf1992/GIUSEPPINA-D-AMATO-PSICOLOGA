@@ -1,70 +1,112 @@
-body {
-  font-family: 'Raleway', sans-serif;
-  background-color: #C5D3B4; /* verde salvia chiaro */
-  color: #444444; /* grigio grafite */
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --serif: 'Playfair Display', serif;
+  --sans: 'Lato', Arial, sans-serif;
+  --primary: #2f2f2f;
+  --accent: #9b5135;  /* warm terracotta */
+  --light: #faf8f6;
+  --max-width: 1100px;
+  --radius: 4px;
 }
 
-/* Header */
-header {
-  background-color: #A3B18A; /* verde salvia medio */
-  color: white;
-  padding: 30px;
-  text-align: center;
-  font-family: 'Playfair Display', serif;
+/* 2. TYPOGRAPHY */
+body         { font-family: var(--sans); line-height: 1.6; color: var(--primary); }
+h1, h2, h3   { font-family: var(--serif); font-weight: 600; line-height: 1.3; }
+h1           { font-size: clamp(2rem, 4vw + 1rem, 3.75rem); }
+h2           { font-size: clamp(1.5rem, 3vw + .5rem, 2.5rem); margin-bottom: 0.7em; }
+p, li, label { font-size: 1.05rem; }
+
+/* 3. GLOBAL ELEMENTS */
+.container   { width: min(100% - 2rem, var(--max-width)); margin-inline: auto; }
+.section-light { background: var(--light); padding: 4.5rem 0; }
+section:not(.hero):not(.cta):not(.section-light) { padding: 4.5rem 0; }
+
+ul           { list-style: none; }
+a            { color: inherit; text-decoration: none; }
+img          { width: 100%; display: block; border-radius: var(--radius); }
+.grid-two    { display: grid; gap: 3rem; }
+@media (min-width: 768px) { .grid-two { grid-template-columns: 1fr 1fr; } }
+
+/* 4. NAVIGATION */
+.site-header { background: #fff; border-bottom: 1px solid #eaeaea; position: sticky; top: 0; z-index: 20; }
+.nav-wrapper { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.brand       { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; }
+
+.main-nav ul { display: flex; gap: 2rem; }
+.main-nav a  { position: relative; padding: 4px 0; }
+.main-nav a::after {
+  content: ""; position: absolute; left: 0; bottom: -2px;
+  width: 0; height: 2px; background: var(--accent); transition: width .3s;
+}
+.main-nav a:hover::after { width: 100%; }
+
+/* Hamburger for <768px */
+#nav-toggle  { background: none; border: 0; display: none; flex-direction: column; gap: 5px; }
+#nav-toggle span { width: 24px; height: 2px; background: var(--primary); }
+@media (max-width: 767px) {
+  .main-nav { position: fixed; inset: 0 0 0 auto; width: 240px; background: #fff;
+              transform: translateX(100%); transition: transform .4s ease; padding: 4rem 2rem; }
+  .main-nav.open { transform: translateX(0); }
+  .main-nav ul { flex-direction: column; gap: 1.5rem; }
+  #nav-toggle  { display: flex; }
 }
 
-/* Navigazione */
-nav {
-  background: #E9E7E1; /* beige medio */
-  padding: 10px;
-  text-align: center;
+/* 5. HERO */
+.hero {
+  position: relative; min-height: 75vh; display: flex; align-items: center;
+  background: url("images/hero.jpg") center/cover fixed;
+}
+.hero .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
+.hero-content { position: relative; color: #fff; text-align: center; max-width: 750px; }
+.hero p { font-size: 1.3rem; margin: 1.25rem auto 2rem; }
+
+/* 6. BUTTONS */
+.btn-primary, .btn-secondary {
+  display: inline-block; padding: 0.9rem 2.1rem; font-weight: 600;
+  border-radius: var(--radius); transition: background .3s ease;
+}
+.btn-primary   { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: #7e402a; }
+.btn-secondary { border: 2px solid var(--accent); color: var(--accent); }
+.btn-secondary:hover { background: var(--accent); color: #fff; }
+
+/* 7. ABOUT SECTION */
+.section-about .about-text p + p { margin-top: 1.2rem; }
+
+/* 8. SERVICES LIST */
+.services-list { display: grid; gap: 1rem; max-width: 700px; margin-inline: auto; }
+@media (min-width: 600px) { .services-list { grid-template-columns: 1fr 1fr; } }
+.services-list li::before {
+  content: "• "; color: var(--accent); font-size: 1.6rem; vertical-align: sub;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* 9. FAQ (details/summary) */
+details { border-bottom: 1px solid #ddd; padding: 1rem 0; }
+summary { cursor: pointer; font-weight: 600; position: relative; padding-right: 1.5rem; }
+summary::after {
+  content: "+"; position: absolute; right: 0; transition: transform .3s;
 }
+details[open] summary::after { transform: rotate(45deg); }
+details p { margin-top: 0.7rem; }
 
-nav ul li {
-  display: inline;
-  margin: 0 15px;
+/* 10. CALL TO ACTION */
+.cta { background: var(--accent); color: #fff; text-align: center; padding: 3.5rem 0; }
+.cta h2 { margin-bottom: 0.4em; }
+.cta .btn-secondary { border-color: #fff; color: #fff; }
+.cta .btn-secondary:hover { background: #fff; color: var(--accent); }
+
+/* 11. CONTACT FORM */
+.contact-wrapper { align-items: start; }
+.contact-form { display: grid; gap: 1.2rem; }
+.contact-form input,
+.contact-form textarea {
+  width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: var(--radius);
+  font: inherit;
 }
+.contact-form button { justify-self: start; }
 
-nav ul li a {
-  text-decoration: none;
-  color: #444444;
-  font-weight: 500;
-  font-family: 'Raleway', sans-serif;
-}
-
-/* Sezioni */
-section {
-  padding: 30px;
-  max-width: 800px;
-  margin: auto;
-  background: #FBFAF9; /* beige chiaro */
-  margin-top: 20px;
-  border-radius: 6px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-}
-
-section h2 
-{font-family: 'Playfair Display', serif;
-  color: #444444;
-}
-
-/* Footer */
-footer {
-  background: #444444; /* grigio grafite */
-  color: white;
-  text-align: center;
-  padding: 15px;
-  margin-top: 40px;
-  font-family: 'Raleway', sans-serif;
-}
-
-
+/* 12. FOOTER */
+.site-footer { background: #f1f1f1; padding: 2rem 0; font-size: 0.9rem; }
+.footer-flex { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+.credits { opacity: 0.75; }
