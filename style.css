@@ -2,8 +2,8 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --serif: 'Libre Baskerville', serif;
-  --sans: 'Proxima Nova', Arial, sans-serif;
+  --serif: 'Playfair Display', serif;
+  --sans: 'Lato', Arial, sans-serif;
   --primary: #2f2f2f;
   --accent: #9b5135;  /* warm terracotta */
   --light: #faf8f6;
@@ -12,11 +12,11 @@
 }
 
 /* 2. TYPOGRAPHY */
-body         { font-family: var(--serif); line-height: 1.6; color: var(--primary); }
-h1, h2, h3   { font-family: var(--sans); font-weight: 600; line-height: 1.3; }
+body         { font-family: var(--sans); line-height: 1.6; color: var(--primary); }
+h1, h2, h3   { font-family: var(--serif); font-weight: 600; line-height: 1.3; }
 h1           { font-size: clamp(2rem, 4vw + 1rem, 3.75rem); }
 h2           { font-size: clamp(1.5rem, 3vw + .5rem, 2.5rem); margin-bottom: 0.7em; }
-p, li, label { font-size: 1.05rem; font-family: var(--serif); }
+p, li, label { font-size: 1.05rem; }
 
 /* 3. GLOBAL ELEMENTS */
 .container   { width: min(100% - 2rem, var(--max-width)); margin-inline: auto; }
@@ -32,7 +32,7 @@ img          { width: 100%; display: block; border-radius: var(--radius); }
 /* 4. NAVIGATION */
 .site-header { background: #fff; border-bottom: 1px solid #eaeaea; position: sticky; top: 0; z-index: 20; }
 .nav-wrapper { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-.brand       { font-family: var(--sans); font-size: 1.4rem; font-weight: 600; }
+.brand       { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; }
 
 .main-nav ul { display: flex; gap: 2rem; }
 .main-nav a  { position: relative; padding: 4px 0; }
@@ -54,28 +54,14 @@ img          { width: 100%; display: block; border-radius: var(--radius); }
 }
 
 /* 5. HERO */
-/* signature inside the hero banner */
 .hero {
-  position: relative;          /* establishes the containing block */
+  position: relative; min-height: 75vh; display: flex; align-items: center;
+  background: url("images/hero.jpg") center/cover fixed;
 }
+.hero .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
+.hero-content { position: relative; color: #fff; text-align: center; max-width: 750px; }
+.hero p { font-size: 1.3rem; margin: 1.25rem auto 2rem; }
 
-.hero-signature {
-  position: absolute;
-  bottom: 1.5rem;              /* distance from bottom edge */
-  left: 1.5rem;                /* distance from left edge */
-  font-family: var(--serif);   /* same elegant serif as headings */
-  font-size: 1rem;
-  font-weight: 600;
-  color: #fff;                 /* white text on dark overlay */
-  letter-spacing: 0.3px;
-  white-space: nowrap;         /* keeps it on one line */
-  z-index: 2;                  /* sits above the overlay */
-}
-
-/* optional: shrink a bit on very small screens */
-@media (max-width: 480px) {
-  .hero-signature { font-size: 0.85rem; }
-}
 /* 6. BUTTONS */
 .btn-primary, .btn-secondary {
   display: inline-block; padding: 0.9rem 2.1rem; font-weight: 600;
@@ -125,6 +111,5 @@ details p { margin-top: 0.7rem; }
 .site-footer { background: #f1f1f1; padding: 2rem 0; font-size: 0.9rem; }
 .footer-flex { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
 .credits { opacity: 0.75; }
-
 
 
