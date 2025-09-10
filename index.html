@@ -1,70 +1,159 @@
-```html
-<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dott.ssa Giuseppina D'Amato – Psicologa</title>
+
+  <!-- Google Fonts: serif for headings, sans for body -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header>
-    <h1>Dott.ssa Giuseppina D'Amato</h1>
-    <p>Psicologa | Psicoterapia | Consulenza Online e in Studio</p>
+  <!-- Sticky Navigation -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a class="brand" href="#">Giuseppina D’Amato</a>
+
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="#chi-sono">Chi Sono</a></li>
+          <li><a href="#servizi">Servizi</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contatti">Contatti</a></li>
+        </ul>
+      </nav>
+
+      <!-- mobile hamburger -->
+      <button id="nav-toggle" aria-label="Apri menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
 
-  <nav>
-    <ul>
-      <li><a href="#chi-sono">Chi Sono</a></li>
-      <li><a href="#servizi">Servizi</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contatti">Contatti</a></li>
-    </ul>
-  </nav>
-
-  <!-- SEZIONE CHI SONO -->
-  <section id="chi-sono">
-    <h2>Chi Sono</h2>
-    <p>
-      Sono la Dott.ssa Giuseppina D'Amato, psicologa iscritta all'Albo, specializzata nel sostegno individuale e relazionale. 
-      Lavoro con adulti, adolescenti e coppie utilizzando un approccio centrato sulla persona.
-    </p>
-  </section>
-<!-- SEZIONE SERVIZI -->
-  <section id="servizi">
-    <h2>Servizi</h2>
-    <ul>
-      <li>Colloqui individuali (in presenza e online)</li>
-      <li>Terapia di coppia</li>
-      <li>Supporto psicologico per adolescenti</li>
-      <li>Gestione di ansia, stress, autostima, relazioni</li>
-    </ul>
+  <!-- HERO / ABOVE-THE-FOLD -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="container hero-content">
+      <h1>Psicologa & Psicoterapeuta</h1>
+      <p>Sostegno individuale, di coppia e consulenze online per il tuo benessere psicologico.</p>
+      <a href="#contatti" class="btn-primary">Prenota un colloquio</a>
+    </div>
   </section>
 
-  <!-- SEZIONE FAQ -->
+  <!-- CHI SONO -->
+  <section id="chi-sono" class="section-about">
+    <div class="container grid-two">
+      <div class="about-text">
+        <h2>Chi Sono</h2>
+        <p>
+          Sono la Dott.ssa Giuseppina D'Amato, psicologa iscritta all'Albo, specializzata nel sostegno
+          individuale e relazionale. Lavoro con adulti, adolescenti e coppie adottando un approccio
+          centrato sulla persona, integrando tecniche evidence-based con empatia e ascolto autentico.
+        </p>
+        <p>
+          Credo che ogni individuo possieda le risorse per superare le proprie difficoltà: il mio
+          compito è accompagnarti nel riscoprirle e potenziarle.
+        </p>
+      </div>
+
+      <!-- profile portrait -->
+      <div class="about-img">
+        <img src="images/ritratto.jpg" alt="Foto della Dott.ssa Giuseppina D'Amato">
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIZI -->
+  <section id="servizi" class="section-light">
+    <div class="container">
+      <h2>Servizi</h2>
+      <ul class="services-list">
+        <li>Colloqui individuali (in presenza e online)</li>
+        <li>Terapia di coppia</li>
+        <li>Supporto psicologico per adolescenti</li>
+        <li>Gestione di ansia, stress, autostima e relazioni</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
   <section id="faq">
-    <h2>Domande Frequenti</h2>
-    <h3>Qual è la differenza tra psicologo, psicoterapeuta e psichiatra?</h3>
-    <p>Lo psicologo è un professionista laureato in psicologia, il terapeuta ha una specializzazione in psicoterapia, mentre lo psichiatra è un medico.</p>
+    <div class="container">
+      <h2>Domande Frequenti</h2>
 
-    <h3>Quanto dura un percorso psicologico?</h3>
-    <p>Dipende dalle esigenze della persona e dagli obiettivi. Può durare da pochi incontri a percorsi più strutturati nel tempo.</p>
+      <details>
+        <summary>Qual è la differenza tra psicologo, psicoterapeuta e psichiatra?</summary>
+        <p>
+          Lo psicologo è un professionista laureato in psicologia e abilitato all'esercizio,
+          lo psicoterapeuta ha una specializzazione post-laurea in psicoterapia,
+          mentre lo psichiatra è un medico che può prescrivere farmaci.
+        </p>
+      </details>
 
-    <h3>Fai consulenze online?</h3>
-    <p>Sì, offro anche sedute via videochiamata, in totale riservatezza.</p>
+      <details>
+        <summary>Quanto dura un percorso psicologico?</summary>
+        <p>
+          Varia in base agli obiettivi: si può andare da pochi incontri focalizzati
+          a percorsi più strutturati. Definiremo insieme frequenza e durata.
+        </p>
+      </details>
+
+      <details>
+        <summary>Fai consulenze online?</summary>
+        <p>Sì, offro sedute via videochiamata con piattaforme sicure e criptate.</p>
+      </details>
+    </div>
   </section>
 
-  <!-- SEZIONE CONTATTI -->
-  <section id="contatti">
-    <h2>Contatti</h2>
-    <p>Email: giuseppina.damato@email.it</p>
-    <p>Telefono: 333 000 0000</p>
-    <p>Studio: Via Esempio 10, Roma</p>
+  <!-- CALL TO ACTION -->
+  <section class="cta">
+    <div class="container">
+      <h2>Pronto a iniziare?</h2>
+      <p>Contattami per fissare un primo colloquio conoscitivo.</p>
+      <a href="#contatti" class="btn-secondary">Scrivimi ora</a>
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+  <section id="contatti" class="section-light">
+    <div class="container grid-two contact-wrapper">
+      <div>
+        <h2>Contatti</h2>
+        <p><strong>Email:</strong> <a href="mailto:giuseppina.damato@email.it">giuseppina.damato@email.it</a></p>
+        <p><strong>Telefono:</strong> <a href="tel:+393330000000">333 000 0000</a></p>
+        <p><strong>Studio:</strong> Via Esempio 10, Roma</p>
+      </div>
+
+      <!-- simple form; you can hook it to Formspree, Netlify, ecc. -->
+      <form class="contact-form" name="contatto" method="POST" data-netlify="true">
+        <label>Nome
+          <input type="text" name="nome" required>
+        </label>
+        <label>Email
+          <input type="email" name="email" required>
+        </label>
+        <label>Messaggio
+          <textarea name="messaggio" rows="5" required></textarea>
+        </label>
+        <button type="submit" class="btn-primary">Invia</button>
+      </form>
+    </div>
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Dott.ssa Giuseppina D'Amato – Psicologa</p>
+  <footer class="site-footer">
+    <div class="container footer-flex">
+      <p>© 2025 Dott.ssa Giuseppina D'Amato – Psicologa</p>
+      <p class="credits">Realizzato con ❤️ in HTML & CSS</p>
+    </div>
   </footer>
+
+  <!-- Mobile nav script -->
+  <script>
+    const nav = document.getElementById('main-nav');
+    const toggle = document.getElementById('nav-toggle');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+  </script>
 </body>
 </html>
-```
