@@ -152,26 +152,10 @@ Attualmente, opero come psicologa clinica presso l'ospedale "Villa dei Fiori" di
   </footer>
 
   <!-- Mobile nav script -->
-<script>
-  const nav    = document.getElementById('main-nav');
-  const toggle = document.getElementById('nav-toggle');
-
-  // open / close when the button is pressed
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('open');
-    toggle.classList.toggle('open');   // for the X animation
-  });
-
-  // close drawer after any menu link is tapped
-  document.querySelectorAll('#main-nav a').forEach(link=>{
-    link.addEventListener('click', ()=>{
-      nav.classList.remove('open');
-      toggle.classList.remove('open');
-    });
-  });
-</script>
+  <script>
+    const nav = document.getElementById('main-nav');
+    const toggle = document.getElementById('nav-toggle');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+  </script>
 </body>
 </html>
-
-
-
