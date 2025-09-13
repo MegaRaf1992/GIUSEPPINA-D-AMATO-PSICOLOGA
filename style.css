@@ -83,7 +83,7 @@ img{width:100%;display:block;border-radius:var(--radius);}
   position:relative;
   min-height:75vh;                 /* 75% viewport */
   display:flex;align-items:center; /* centra il contenuto */
-  background:url("images/hero.jpg") center/cover no-repeat fixed;
+  background:url(HPR - Giusy.png") center/cover no-repeat fixed;
 }
 /* togli “fixed” se non vuoi il leggero parallax su desktop */
 @media (max-width:768px){
@@ -160,8 +160,5 @@ details p{margin-top:.7rem;}
 .site-footer{background:#f1f1f1;padding:2rem 0;font-size:.9rem;}
 .footer-flex{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;}
 .credits{opacity:.75;}
-
-
-
 
 
