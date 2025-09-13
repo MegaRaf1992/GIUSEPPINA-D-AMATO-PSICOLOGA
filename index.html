@@ -12,7 +12,7 @@
 
 <body>
 
-  <!-- ========== HEADER ========== -->
+  <!-- ========== HEADER / NAV ========== -->
   <header class="site-header">
     <div class="container nav-wrapper">
 
@@ -27,7 +27,7 @@
         </ul>
       </nav>
 
-      <!-- Hamburger / X -->
+      <!-- pulsante hamburger / X -->
       <button id="nav-toggle" aria-label="Apri menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -153,13 +153,15 @@
       toggle.setAttribute('aria-expanded', nav.classList.contains('open'));
     });
 
-    document.querySelectorAll('#main-nav a')
-      .forEach(link => link.addEventListener('click', () => {
+    document.querySelectorAll('#main-nav a').forEach(link =>
+      link.addEventListener('click', () => {
         nav.classList.remove('open');
         toggle.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
-      }));
+      })
+    );
   </script>
 
 </body>
 </html>
+
