@@ -1,164 +1,136 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dott.ssa Giuseppina D'Amato – Psicologa</title>
+/* 1. BASIC RESET & VARIABLES */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <!-- Google Fonts: serif for headings, sans for body -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
+:root {
+  --serif: 'Playfair Display', serif;
+  --sans: 'Lato', Arial, sans-serif;
+  --primary: #111111;
+  --accent: #f4b400;  
+  --light: #f8f8f5;
+  --max-width: 1100px;
+  --radius: 4px;
+}
 
-<body>
-  <!-- Sticky Navigation -->
-  <header class="site-header">
-    <div class="container nav-wrapper">
-      <a class="brand" href="#">Dott.ssa Giuseppina D’Amato</a>
+/* 2. TYPOGRAPHY */
+body         { font-family: var(--sans); line-height: 1.6; color: var(--primary); background: var(--light); }   /* NEW bg */
+h1, h2, h3   { font-family: var(--serif); font-weight: 600; line-height: 1.3; color: var(--primary); }          /* NEW clr */
+h1           { font-size: clamp(2rem, 4vw + 1rem, 3.75rem); }
+h2           { font-size: clamp(1.5rem, 3vw + .5rem, 2.5rem); margin-bottom: 0.7em; }
+p, li, label { font-size: 1.05rem; }
 
-      <nav class="main-nav" id="main-nav">
-        <ul>
-          <li><a href="#chi-sono">Chi Sono</a></li>
-          <li><a href="#servizi">Servizi</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contatti">Contatti</a></li>
-        </ul>
-      </nav>
+/* 3. GLOBAL ELEMENTS */
+.container   { width: min(100% - 2rem, var(--max-width)); margin-inline: auto; }
+.section-light { background: var(--light); padding: 4.5rem 0; }
+section:not(.hero):not(.cta):not(.section-light) { padding: 4.5rem 0; }
 
-      <!-- mobile hamburger -->
-      <button id="nav-toggle" aria-label="Apri menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+ul           { list-style: none; }
+a            { color: inherit; text-decoration: none; }
+img          { width: 100%; display: block; border-radius: var(--radius); }
+.grid-two    { display: grid; gap: 3rem; }
+@media (min-width: 768px) { .grid-two { grid-template-columns: 1fr 1fr; } }
 
-  <!-- HERO / ABOVE-THE-FOLD -->
-  <section class="hero">
-    <div class="overlay"></div>
-    <div class="container hero-content">
-      <h1>Psicologa & Psicoterapeuta</h1>
-      <p>Sostegno individuale, di coppia e consulenze online per il tuo benessere psicologico.</p>
-      <a href="#contatti" class="btn-primary">Prenota un colloquio</a>
-    </div>
-  </section>
+/* 4. NAVIGATION */
+.site-header { background: #fff; border-bottom: 1px solid #eaeaea; position: sticky; top: 0; z-index: 20; }
+.nav-wrapper { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.brand       { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; }
 
-  <!-- CHI SONO -->
-  <section id="chi-sono" class="section-about">
-    <div class="container grid-two">
-      <div class="about-text">
-        <h2>Chi Sono</h2>
-        <p>
-Sono la Dottoressa Giuseppina D'Amato, psicologa, psicoterapeuta e analista del comportamento, iscritta all'Albo della Regione Campania. Ho conseguito la laurea specialistica presso l'Università Sapienza di Roma e ho approfondito le mie competenze con un Master di secondo livello in Analisi del Comportamento Applicata (ABA) presso l'Università LUMSA.
+.main-nav ul { display: flex; gap: 2rem; }
+.main-nav a  { position: relative; padding: 4px 0; }
+.main-nav a::after {
+  content: ""; position: absolute; left: 0; bottom: -2px;
+  width: 0; height: 2px; background: var(--accent); transition: width .3s;
+}
+.main-nav a:hover::after { width: 100%; }
 
-Sono specializzata nel trattamento di ansia, depressione e traumi, e ho acquisito una formazione specifica nella valutazione e diagnosi del disturbo dello spettro autistico tramite un corso professionalizzante presso il centro Hogrefe. Mi occupo inoltre di tematiche relative alle relazioni, allo stress lavorativo/accademico e ai cambiamenti di vita, avendo esperienza con bambini, adulti e coppie.
+/* Hamburger for <768px */
+#nav-toggle  { background: none; border: 0; display: none; flex-direction: column; gap: 5px; }
+#nav-toggle span { width: 24px; height: 2px; background: var(--primary); }
+@media (max-width: 767px) {
+  .main-nav { position: fixed; inset: 0 0 0 auto; width: 240px; background: #fff;
+              transform: translateX(100%); transition: transform .4s ease; padding: 4rem 2rem; }
+  .main-nav.open { transform: translateX(0); }
+  .main-nav ul { flex-direction: column; gap: 1.5rem; }
+  #nav-toggle  { display: flex; }
+}
 
-        </p>
-        <p>
-Attualmente, opero come psicologa clinica presso l'ospedale "Villa dei Fiori" di Acerra (NA), dove mi dedico a diagnosi e interventi terapeutici. Collaboro da tre anni con il Sert di Salerno nel trattamento della tossicodipendenza e offro un servizio di ascolto presso il Comune di Pomigliano D'arco, Napoli, fornendo supporto emotivo e orientamento alla comunità.
-        </p>
-      </div>
+/* 5. HERO */
+.hero {
+  position: relative; min-height: 75vh; display: flex; align-items: center;
+  background: url("images/hero.jpg") center/cover fixed;
+}
+.hero .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
+.hero-content { position: relative; color: #fff; text-align: center; max-width: 750px; }
+.hero p { font-size: 1.3rem; margin: 1.25rem auto 2rem; }
 
-      <!-- profile portrait -->
-      <div class="about-img">
-        <img src="Dott.ssa Giuseppina D'Amato.jpeg" 
-          alt="Ritratto della Dott.ssa Giuseppina D'Amato"
-          loading="lazy">
-      </div>
-    </div>
-  </section>
+/* 6. BUTTONS */
+.btn-primary, .btn-secondary {
+  display: inline-block; padding: 0.9rem 2.1rem; font-weight: 600;
+  border-radius: var(--radius); transition: background .3s ease;
+}
+.btn-primary   { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: #c99700; }
+.btn-secondary { border: 2px solid var(--accent); color: var(--accent); }
+.btn-secondary:hover { background: var(--accent); color: #fff; }
 
-  <!-- SERVIZI -->
-  <section id="servizi" class="section-light">
-    <div class="container">
-      <h2>Servizi</h2>
-      <ul class="services-list">
-        <li>Colloqui individuali (in presenza e online)</li>
-        <li>Terapia di coppia</li>
-        <li>Supporto psicologico per adolescenti</li>
-        <li>Gestione di ansia, stress, autostima e relazioni</li>
-      </ul>
-    </div>
-  </section>
+/* 7. ABOUT SECTION */
+.section-about .about-text p + p { margin-top: 1.2rem; }
 
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="container">
-      <h2>Domande Frequenti</h2>
+/* 8. SERVICES LIST */
+.services-list { display: grid; gap: 1rem; max-width: 700px; margin-inline: auto; }
+@media (min-width: 600px) { .services-list { grid-template-columns: 1fr 1fr; } }
+.services-list li::before {
+  content: "• "; color: var(--accent); font-size: 1.6rem; vertical-align: sub;
+}
 
-      <details>
-        <summary>Qual è la differenza tra psicologo, psicoterapeuta e psichiatra?</summary>
-        <p>
-          Lo psicologo è un professionista laureato in psicologia e abilitato all'esercizio,
-          lo psicoterapeuta ha una specializzazione post-laurea in psicoterapia,
-          mentre lo psichiatra è un medico che può prescrivere farmaci.
-        </p>
-      </details>
+/* 9. FAQ (details/summary) */
+details { border-bottom: 1px solid #ddd; padding: 1rem 0; }
+summary { cursor: pointer; font-weight: 600; position: relative; padding-right: 1.5rem; }
+summary::after {
+  content: "+"; position: absolute; right: 0; transition: transform .3s;
+}
+details[open] summary::after { transform: rotate(45deg); }
+details p { margin-top: 0.7rem; }
 
-      <details>
-        <summary>Quanto dura un percorso psicologico?</summary>
-        <p>
-          Varia in base agli obiettivi: si può andare da pochi incontri focalizzati
-          a percorsi più strutturati. Definiremo insieme frequenza e durata.
-        </p>
-      </details>
+/* 10. CALL TO ACTION */
+.cta { background: var(--accent); color: #fff; text-align: center; padding: 3.5rem 0; }
+.cta h2 { margin-bottom: 0.4em; }
+.cta .btn-secondary { border-color: #fff; color: #fff; }
+.cta .btn-secondary:hover { background: #fff; color: var(--accent); }
 
-      <details>
-        <summary>Fai consulenze online?</summary>
-        <p>Sì, offro sedute via videochiamata con piattaforme sicure e criptate.</p>
-      </details>
-    </div>
-  </section>
+/* 11. CONTACT FORM */
+.contact-wrapper { align-items: start; }
+.contact-form { display: grid; gap: 1.2rem; }
+.contact-form input,
+.contact-form textarea {
+  width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: var(--radius);
+  font: inherit;
+}
+.contact-form button { justify-self: start; }
 
-  <!-- CALL TO ACTION -->
-  <section class="cta">
-    <div class="container">
-      <h2>Pronto a iniziare?</h2>
-      <p>Contattami per fissare un primo colloquio conoscitivo.</p>
-      <a href="#contatti" class="btn-secondary">Scrivimi ora</a>
-    </div>
-  </section>
+/* 12. FOOTER */
+.site-footer { background: #f1f1f1; padding: 2rem 0; font-size: 0.9rem; }
+.footer-flex { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+.credits { opacity: 0.75; }
 
-  <!-- CONTATTI -->
-  <section id="contatti" class="section-light">
-    <div class="container grid-two contact-wrapper">
-      <div>
-        <h2>Contatti</h2>
-        <p><strong>Email:</strong> <a href="mailto:giusydmt27@gmail.com">giusydmt27@gmail.com</a></p>
-        <p><strong>Telefono:</strong> <a href="tel:+393330000000">+39 3514406526</a></p>
-        <p><strong>Studio:</strong> Via Duomo 184, Napoli</p>
-      </div>
+.about-img img { border-radius: 50%; object-fit: cover; }
+.about-img {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+.about-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.about-img img { box-shadow: 0 8px 16px rgba(0,0,0,.1); }
 
-      <!-- simple form; you can hook it to Formspree, Netlify, ecc. -->
-      <form class="contact-form" name="contatto" method="POST" data-netlify="true">
-        <label>Nome
-          <input type="text" name="nome" required>
-        </label>
-        <label>Email
-          <input type="email" name="email" required>
-        </label>
-        <label>Messaggio
-          <textarea name="messaggio" rows="5" required></textarea>
-        </label>
-        <button type="submit" class="btn-primary">Invia</button>
-      </form>
-    </div>
-  </section>
+.about-img            { max-width: 240px;
+                        margin-inline: auto; }
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-flex">
-      <p>© 2025 Dott.ssa Giuseppina D'Amato – Psicologa</p>
-    </div>
-  </footer>
-
-  <!-- Mobile nav script -->
-  <script>
-    const nav = document.getElementById('main-nav');
-    const toggle = document.getElementById('nav-toggle');
-    toggle.addEventListener('click', () => nav.classList.toggle('open'));
-  </script>
-</body>
-</html>
+.about-img img        { width: 100%;
+                        height: auto;
+                        object-fit: cover;
+}
 
 
 
