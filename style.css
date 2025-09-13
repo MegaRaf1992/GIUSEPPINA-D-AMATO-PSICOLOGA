@@ -128,15 +128,35 @@ img{width:100%;display:block;border-radius:var(--radius);}
 /* ===================================================== */
 /* 8. SERVIZI                                            */
 /* ===================================================== */
+/* — contenitore — */
 .services-list{
-  display:grid;gap:1rem;max-width:700px;margin-inline:auto;
-  justify-items:start;text-align:left;
+  margin:0;                     /* niente rientro extra           */
+  padding:0;                    /* rimuove padding di default     */
+  list-style:none;              /* useremo un pallino custom      */
+  max-width:700px;
 }
-@media (min-width:600px){
-  .services-list{grid-template-columns:1fr 1fr;}
-}
-.services-list li::before{content:"• ";color:var(--accent);font-size:1.6rem;vertical-align:sub;}
 
+/* — singolo elemento — */
+.services-list li{
+  display:flex;                 /* pallino e testo sulla stessa riga */
+  align-items:flex-start;
+  margin:0 0 1rem 0;            /* distanza verticale tra voci       */
+  text-align:left;              /* allineamento a sinistra           */
+}
+
+/* — pallino giallo custom — */
+.services-list li::before{
+  content:"";                   /* disegniamo noi il cerchietto      */
+  width:.55rem;
+  height:.55rem;
+  margin-right:.6rem;           /* spazio fra pallino e testo        */
+  margin-top:.45em;             /* centra il pallino con la 1ª riga  */
+  border-radius:50%;
+  background:var(--accent);
+  flex:0 0 auto;                /* non si deforma                   */
+}
+
+/* — breakpoint desktop: nessun cambio, resta colonna unica — */
 /* ===================================================== */
 /* 9. FAQ                                                */
 /* ===================================================== */
@@ -169,3 +189,4 @@ details p{margin-top:.7rem;}
 /* ===================================================== */
 .site-footer{background:#f1f1f1;padding:2rem 0;font-size:.9rem;}
 .footer-flex{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;}
+
