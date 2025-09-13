@@ -37,7 +37,7 @@ img{width:100%;display:block;border-radius:var(--radius);}
 @media (min-width:768px){.grid-two{grid-template-columns:1fr 1fr;}}
 
 /* ===================================================== */
-/* 4. NAVIGAZIONE MOBILE + DESKTOP                       */
+/* 4. NAVIGAZIONE                                        */
 /* ===================================================== */
 .site-header{background:#fff;border-bottom:1px solid #eaeaea;position:sticky;top:0;z-index:20;}
 .nav-wrapper{display:flex;align-items:center;justify-content:space-between;height:72px;}
@@ -51,11 +51,11 @@ img{width:100%;display:block;border-radius:var(--radius);}
 }
 .main-nav a:hover::after{width:100%;}
 
-/* ---------- hamburger base ---------- */
+/* ---------- pulsante hamburger ---------- */
 #nav-toggle{background:none;border:0;display:none;flex-direction:column;gap:5px;}
 #nav-toggle span{width:24px;height:2px;background:var(--primary);transition:transform .3s,opacity .3s;}
 
-/* ---------- mobile layout ---------- */
+/* ---------- mobile drawer ---------- */
 @media (max-width:767px){
   #nav-toggle{
     position:fixed;top:18px;right:18px;z-index:50;
@@ -71,7 +71,7 @@ img{width:100%;display:block;border-radius:var(--radius);}
   .main-nav ul{flex-direction:column;gap:1.5rem;}
 }
 
-/* ---------- icona “X” quando open ---------- */
+/* ---------- icona “X” ---------- */
 #nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 #nav-toggle.open span:nth-child(2){opacity:0;}
 #nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
@@ -81,13 +81,12 @@ img{width:100%;display:block;border-radius:var(--radius);}
 /* ===================================================== */
 .hero{
   position:relative;
-  min-height:75vh;                 /* 75% viewport */
-  display:flex;align-items:center; /* centra il contenuto */
-  background:url(HPR - Giusy.png) center/cover no-repeat fixed;
+  min-height:75vh;                           /* 75% viewport height */
+  display:flex;align-items:center;           /* centra il contenuto */
+  background:url("images/hero.jpg") center/cover no-repeat fixed;
 }
-/* togli “fixed” se non vuoi il leggero parallax su desktop */
 @media (max-width:768px){
-  .hero{background-attachment:scroll;}  /* niente parallax su mobile */
+  .hero{background-attachment:scroll;}       /* niente parallax su mobile */
 }
 
 .hero .overlay{position:absolute;inset:0;background:rgba(0,0,0,.45);}
@@ -149,7 +148,8 @@ details p{margin-top:.7rem;}
 /* ===================================================== */
 .contact-wrapper{align-items:start;}
 .contact-form{display:grid;gap:1.2rem;}
-.contact-form input,.contact-form textarea{
+.contact-form input,
+.contact-form textarea{
   width:100%;padding:.8rem;border:1px solid #ccc;border-radius:var(--radius);font:inherit;
 }
 .contact-form button{justify-self:start;}
@@ -160,6 +160,7 @@ details p{margin-top:.7rem;}
 .site-footer{background:#f1f1f1;padding:2rem 0;font-size:.9rem;}
 .footer-flex{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;}
 .credits{opacity:.75;}
+
 
 
 
