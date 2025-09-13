@@ -1,136 +1,152 @@
-/* 1. BASIC RESET & VARIABLES */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  /* ===================================================== */
+/* 1. RESET & VARIABILI                                  */
+/* ===================================================== */
+,::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 
-:root {
-  --serif: 'Playfair Display', serif;
-  --sans: 'Lato', Arial, sans-serif;
-  --primary: #111111;
-  --accent: #f4b400;  
-  --light: #f8f8f5;
-  --max-width: 1100px;
-  --radius: 4px;
+:root{
+  --serif:'Playfair Display',serif;
+  --sans :'Lato',Arial,sans-serif;
+  --primary:#111111;
+  --accent :#f4b400;
+  --light  :#f8f8f5;
+  --max-width:1100px;
+  --radius:4px;
 }
 
-/* 2. TYPOGRAPHY */
-body         { font-family: var(--sans); line-height: 1.6; color: var(--primary); background: var(--light); }   /* NEW bg */
-h1, h2, h3   { font-family: var(--serif); font-weight: 600; line-height: 1.3; color: var(--primary); }          /* NEW clr */
-h1           { font-size: clamp(2rem, 4vw + 1rem, 3.75rem); }
-h2           { font-size: clamp(1.5rem, 3vw + .5rem, 2.5rem); margin-bottom: 0.7em; }
-p, li, label { font-size: 1.05rem; }
+/* ===================================================== */
+/* 2. TIPOGRAFIA                                         */
+/* ===================================================== */
+body{font-family:var(--sans);line-height:1.6;color:var(--primary);background:var(--light);}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.3;color:var(--primary);}
+h1{font-size:clamp(2rem,4vw + 1rem,3.75rem);}
+h2{font-size:clamp(1.5rem,3vw + .5rem,2.5rem);margin-bottom:.7em;}
+p,li,label{font-size:1.05rem;}
 
-/* 3. GLOBAL ELEMENTS */
-.container   { width: min(100% - 2rem, var(--max-width)); margin-inline: auto; }
-.section-light { background: var(--light); padding: 4.5rem 0; }
-section:not(.hero):not(.cta):not(.section-light) { padding: 4.5rem 0; }
+/* ===================================================== */
+/* 3. LAYOUT GENERALE                                    */
+/* ===================================================== */
+.container{width:min(100% - 2rem,var(--max-width));margin-inline:auto;}
+.section-light{background:var(--light);padding:4.5rem 0;}
+section:not(.hero):not(.cta):not(.section-light){padding:4.5rem 0;}
 
-ul           { list-style: none; }
-a            { color: inherit; text-decoration: none; }
-img          { width: 100%; display: block; border-radius: var(--radius); }
-.grid-two    { display: grid; gap: 3rem; }
-@media (min-width: 768px) { .grid-two { grid-template-columns: 1fr 1fr; } }
+ul{list-style:none;}
+a {color:inherit;text-decoration:none;}
+img{width:100%;display:block;border-radius:var(--radius);}
 
-/* 4. NAVIGATION */
-.site-header { background: #fff; border-bottom: 1px solid #eaeaea; position: sticky; top: 0; z-index: 20; }
-.nav-wrapper { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-.brand       { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; }
+.grid-two{display:grid;gap:3rem;}
+@media (min-width:768px){.grid-two{grid-template-columns:1fr 1fr;}}
 
-.main-nav ul { display: flex; gap: 2rem; }
-.main-nav a  { position: relative; padding: 4px 0; }
-.main-nav a::after {
-  content: ""; position: absolute; left: 0; bottom: -2px;
-  width: 0; height: 2px; background: var(--accent); transition: width .3s;
+/* ===================================================== */
+/* 4. NAVIGAZIONE                                        */
+/* ===================================================== */
+.site-header{background:#fff;border-bottom:1px solid #eaeaea;position:sticky;top:0;z-index:20;}
+.nav-wrapper{display:flex;align-items:center;justify-content:space-between;height:72px;}
+
+.brand{font-family:var(--serif);font-size:1.4rem;font-weight:600;}
+
+.main-nav ul{display:flex;gap:2rem;}
+.main-nav a{position:relative;padding:4px 0;}
+.main-nav a::after{
+  content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--accent);transition:width .3s;
 }
-.main-nav a:hover::after { width: 100%; }
+.main-nav a:hover::after{width:100%;}
 
-/* Hamburger for <768px */
-#nav-toggle  { background: none; border: 0; display: none; flex-direction: column; gap: 5px; }
-#nav-toggle span { width: 24px; height: 2px; background: var(--primary); }
-@media (max-width: 767px) {
-  .main-nav { position: fixed; inset: 0 0 0 auto; width: 240px; background: #fff;
-              transform: translateX(100%); transition: transform .4s ease; padding: 4rem 2rem; }
-  .main-nav.open { transform: translateX(0); }
-  .main-nav ul { flex-direction: column; gap: 1.5rem; }
-  #nav-toggle  { display: flex; }
-}
+/* -------- MOBILE DRAWER -------- */
+#nav-toggle{background:none;border:0;display:none;flex-direction:column;gap:5px;}
+#nav-toggle span{width:24px;height:2px;background:var(--primary);}
 
-/* 5. HERO */
-.hero {
-  position: relative; min-height: 75vh; display: flex; align-items: center;
-  background: url("images/hero.jpg") center/cover fixed;
-}
-.hero .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
-.hero-content { position: relative; color: #fff; text-align: center; max-width: 750px; }
-.hero p { font-size: 1.3rem; margin: 1.25rem auto 2rem; }
-
-/* 6. BUTTONS */
-.btn-primary, .btn-secondary {
-  display: inline-block; padding: 0.9rem 2.1rem; font-weight: 600;
-  border-radius: var(--radius); transition: background .3s ease;
-}
-.btn-primary   { background: var(--accent); color: #fff; }
-.btn-primary:hover { background: #c99700; }
-.btn-secondary { border: 2px solid var(--accent); color: var(--accent); }
-.btn-secondary:hover { background: var(--accent); color: #fff; }
-
-/* 7. ABOUT SECTION */
-.section-about .about-text p + p { margin-top: 1.2rem; }
-
-/* 8. SERVICES LIST */
-.services-list { display: grid; gap: 1rem; max-width: 700px; margin-inline: auto; }
-@media (min-width: 600px) { .services-list { grid-template-columns: 1fr 1fr; } }
-.services-list li::before {
-  content: "• "; color: var(--accent); font-size: 1.6rem; vertical-align: sub;
+/* hamburger sempre visibile + X */
+@media (max-width:767px){
+  #nav-toggle{
+    position:fixed;top:18px;right:18px;z-index:50;
+    display:flex;flex-direction:column;gap:5px;
+  }
+  .main-nav{
+    position:fixed;inset:0 0 0 auto;width:240px;background:#fff;
+    transform:translateX(100%);transition:transform .4s ease;
+    padding:4rem 2rem;
+  }
+  .main-nav.open{transform:translateX(0);}
+  .main-nav ul{flex-direction:column;gap:1.5rem;}
 }
 
-/* 9. FAQ (details/summary) */
-details { border-bottom: 1px solid #ddd; padding: 1rem 0; }
-summary { cursor: pointer; font-weight: 600; position: relative; padding-right: 1.5rem; }
-summary::after {
-  content: "+"; position: absolute; right: 0; transition: transform .3s;
+/* animazione X */
+#nav-toggle span{transition:transform .3s,opacity .3s;}
+#nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+#nav-toggle.open span:nth-child(2){opacity:0;}
+#nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* ===================================================== */
+/* 5. HERO                                               */
+/* ===================================================== */
+.hero{
+  position:relative;min-height:75vh;display:flex;align-items:center;
+  background:url("images/hero.jpg") center/cover fixed;
 }
-details[open] summary::after { transform: rotate(45deg); }
-details p { margin-top: 0.7rem; }
+.hero .overlay{position:absolute;inset:0;background:rgba(0,0,0,.45);}
+.hero-content{position:relative;color:#fff;text-align:center;max-width:750px;}
+.hero p{font-size:1.3rem;margin:1.25rem auto 2rem;}
 
-/* 10. CALL TO ACTION */
-.cta { background: var(--accent); color: #fff; text-align: center; padding: 3.5rem 0; }
-.cta h2 { margin-bottom: 0.4em; }
-.cta .btn-secondary { border-color: #fff; color: #fff; }
-.cta .btn-secondary:hover { background: #fff; color: var(--accent); }
-
-/* 11. CONTACT FORM */
-.contact-wrapper { align-items: start; }
-.contact-form { display: grid; gap: 1.2rem; }
-.contact-form input,
-.contact-form textarea {
-  width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: var(--radius);
-  font: inherit;
+/* ===================================================== */
+/* 6. BOTTONI                                            */
+/* ===================================================== */
+.btn-primary,.btn-secondary{
+  display:inline-block;padding:.9rem 2.1rem;font-weight:600;
+  border-radius:var(--radius);transition:background .3s ease,color .3s ease;
 }
-.contact-form button { justify-self: start; }
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:#c99700;}
+.btn-secondary{border:2px solid var(--accent);color:var(--accent);}
+.btn-secondary:hover{background:var(--accent);color:#fff;}
 
-/* 12. FOOTER */
-.site-footer { background: #f1f1f1; padding: 2rem 0; font-size: 0.9rem; }
-.footer-flex { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
-.credits { opacity: 0.75; }
+/* ===================================================== */
+/* 7. ABOUT                                              */
+/* ===================================================== */
+.section-about .about-text p + p{margin-top:1.2rem;}
 
-.about-img img { border-radius: 50%; object-fit: cover; }
-.about-img {
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
+.about-img{max-width:240px;margin-inline:auto;aspect-ratio:4/5;overflow:hidden;}
+.about-img img{height:100%;width:100%;object-fit:cover;border-radius:50%;box-shadow:0 8px 16px rgba(0,0,0,.1);}
+
+/* ===================================================== */
+/* 8. SERVIZI                                            */
+/* ===================================================== */
+.services-list{display:grid;gap:1rem;max-width:700px;margin-inline:auto;}
+@media (min-width:600px){.services-list{grid-template-columns:1fr 1fr;}}
+.services-list li::before{content:"• ";color:var(--accent);font-size:1.6rem;vertical-align:sub;}
+
+/* ===================================================== */
+/* 9. FAQ                                                */
+/* ===================================================== */
+details{border-bottom:1px solid #ddd;padding:1rem 0;}
+summary{cursor:pointer;font-weight:600;position:relative;padding-right:1.5rem;}
+summary::after{content:"+";position:absolute;right:0;transition:transform .3s;}
+details[open] summary::after{transform:rotate(45deg);}
+details p{margin-top:.7rem;}
+
+/* ===================================================== */
+/* 10. CALL TO ACTION                                    */
+/* ===================================================== */
+.cta{background:var(--accent);color:#fff;text-align:center;padding:3.5rem 0;}
+.cta h2{margin-bottom:.4em;}
+.cta .btn-secondary{border-color:#fff;color:#fff;}
+.cta .btn-secondary:hover{background:#fff;color:var(--accent);}
+
+/* ===================================================== */
+/* 11. FORM CONTATTI                                     */
+/* ===================================================== */
+.contact-wrapper{align-items:start;}
+.contact-form{display:grid;gap:1.2rem;}
+.contact-form input,.contact-form textarea{
+  width:100%;padding:.8rem;border:1px solid #ccc;border-radius:var(--radius);font:inherit;
 }
-.about-img img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-.about-img img { box-shadow: 0 8px 16px rgba(0,0,0,.1); }
+.contact-form button{justify-self:start;}
 
-.about-img            { max-width: 240px;
-                        margin-inline: auto; }
-
-.about-img img        { width: 100%;
-                        height: auto;
-                        object-fit: cover;
-}
+/* ===================================================== */
+/* 12. FOOTER                                            */
+/* ===================================================== */
+.site-footer{background:#f1f1f1;padding:2rem 0;font-size:.9rem;}
+.footer-flex{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;}
+.credits{opacity:.75;}
 
 
 
