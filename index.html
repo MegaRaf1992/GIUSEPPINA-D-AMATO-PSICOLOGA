@@ -12,7 +12,7 @@
 
 <body>
 
-  <!-- ========== HEADER / NAV ========== -->
+  <!-- ========== HEADER ========== -->
   <header class="site-header">
     <div class="container nav-wrapper">
 
@@ -27,7 +27,7 @@
         </ul>
       </nav>
 
-      <!-- hamburger / X -->
+      <!-- Hamburger / X -->
       <button id="nav-toggle" aria-label="Apri menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -39,7 +39,7 @@
   <section class="hero">
     <div class="overlay"></div>
     <div class="container hero-content">
-      <h1>Psicologa & Psicoterapeuta</h1>
+      <h1>Psicologa &amp; Psicoterapeuta</h1>
       <p>Sostegno individuale, di coppia e consulenze online per il tuo benessere psicologico.</p>
       <a href="#contatti" class="btn-primary">Prenota un colloquio</a>
     </div>
@@ -142,19 +142,17 @@
     </div>
   </footer>
 
-  <!-- ========== MOBILE NAV SCRIPT ========== -->
+  <!-- ========== SCRIPT NAV MOBILE ========== -->
   <script>
     const nav    = document.getElementById('main-nav');
     const toggle = document.getElementById('nav-toggle');
 
-    // apre / chiude con il tap sul bottone
     toggle.addEventListener('click', () => {
       nav.classList.toggle('open');
       toggle.classList.toggle('open');
       toggle.setAttribute('aria-expanded', nav.classList.contains('open'));
     });
 
-    // chiude dopo il tap su un link di menu
     document.querySelectorAll('#main-nav a')
       .forEach(link => link.addEventListener('click', () => {
         nav.classList.remove('open');
