@@ -23,7 +23,7 @@ h2{font-size:clamp(1.5rem,3vw + .5rem,2.5rem);margin-bottom:.7em;}
 p,li,label{font-size:1.05rem;}
 
 /* ===================================================== */
-/* 3. LAYOUT GENERALE (mobile-first per TUTTI i device)   */
+/* 3. LAYOUT GENERALE                                    */
 /* ===================================================== */
 .container{width:min(100% - 2rem,var(--max-width));margin-inline:auto;}
 .section-light{background:var(--light);padding:4.5rem 0;}
@@ -36,11 +36,12 @@ img{width:100%;display:block;border-radius:var(--radius);}
 /* ===================================================== */
 /* 4. NAVIGAZIONE                                        */
 /* ===================================================== */
-.site-header{background:#fff;border-bottom:1px solid #eaeaea;position:sticky;top:0;z-index:60;}
+.site-header{background:#fff;border-bottom:1px solid #eaeaea;position:sticky;top:0;z-index:80;}
 .nav-wrapper{display:flex;align-items:center;justify-content:space-between;height:72px;}
 
 .brand{font-family:var(--serif);font-size:1.4rem;font-weight:600;}
 
+/* lista nav desktop */
 .main-nav ul{display:flex;gap:2rem;}
 .main-nav a{position:relative;padding:4px 0;}
 .main-nav a::after{
@@ -48,48 +49,47 @@ img{width:100%;display:block;border-radius:var(--radius);}
 }
 .main-nav a:hover::after{width:100%;}
 
-/* ---------- pulsante hamburger (dentro header) -------- */
-#nav-toggle{background:none;border:0;display:none;flex-direction:column;gap:5px;cursor:pointer;}
+/* ---- pulsante hamburger / X ---- */
+#nav-toggle{background:none;border:0;display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:90;}
 #nav-toggle span{width:24px;height:2px;background:var(--primary);transition:transform .3s,opacity .3s;}
 
+/* ---- layout mobile ---- */
 @media (max-width:767px){
   #nav-toggle{display:flex;}
 
+  /* drawer che scorre da destra sotto l'header */
   .main-nav{
-    position:fixed;inset:0 0 0 auto;width:240px;background:#fff;
-    transform:translateX(100%);transition:transform .4s ease;z-index:50;
-    padding:4rem 2rem;
+    position:fixed;top:72px;right:0;bottom:0;
+    width:240px;background:#fff;z-index:60;
+    transform:translateX(100%);transition:transform .4s ease;
+    padding:3rem 2rem;
   }
   .main-nav.open{transform:translateX(0);}
   .main-nav ul{flex-direction:column;gap:1.5rem;}
 }
 
-/* ---------- icona “X” ---------- */
+/* hamburger → X */
 #nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 #nav-toggle.open span:nth-child(2){opacity:0;}
 #nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
 /* ===================================================== */
-/* 5. HERO (stile identico mobile/desktop)               */
+/* 5. HERO                                               */
 /* ===================================================== */
 .hero{
   position:relative;
-  min-height:75vh;                           /* 75% viewport height */
+  min-height:75vh;
   display:flex;align-items:center;
   background:url("images/hero.jpg") center/cover no-repeat fixed;
 }
 @media (max-width:768px){
-  .hero{background-attachment:scroll;}       /* niente parallax su mobile */
+  .hero{background-attachment:scroll;}
 }
 
 .hero .overlay{position:absolute;inset:0;background:rgba(0,0,0,.45);}
 .hero-content{position:relative;color:#fff;text-align:center;max-width:750px;margin-inline:auto;}
 .hero p{font-size:1.3rem;margin:1.25rem auto 2rem;}
-
-/* testo hero tutto bianco */
-.hero h1,
-.hero h2,
-.hero h3 {color:#fff;}
+.hero h1,.hero h2,.hero h3{color:#fff;}
 
 /* ===================================================== */
 /* 6. BOTTONI                                            */
@@ -104,7 +104,7 @@ img{width:100%;display:block;border-radius:var(--radius);}
 .btn-secondary:hover{background:var(--accent);color:#fff;}
 
 /* ===================================================== */
-/* 7. ABOUT (layout verticale anche su desktop)          */
+/* 7. CHI SONO                                           */
 /* ===================================================== */
 .section-about .about-text p + p{margin-top:1.2rem;}
 
@@ -117,10 +117,24 @@ img{width:100%;display:block;border-radius:var(--radius);}
   box-shadow:0 8px 16px rgba(0,0,0,.1);
 }
 
+/* desktop: due colonne, immagine a destra */
+@media (min-width:900px){
+  #chi-sono .container{
+    display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:3rem;
+  }
+  #chi-sono .about-img{order:2;margin-bottom:0;}
+}
+
 /* ===================================================== */
-/* 8. SERVIZI (sempre colonna singola)                   */
+/* 8. SERVIZI                                            */
 /* ===================================================== */
-.services-list{display:grid;gap:1rem;max-width:700px;margin-inline:auto;}
+.services-list{
+  display:grid;gap:1rem;max-width:700px;margin-inline:auto;
+  justify-items:start;text-align:left;
+}
+@media (min-width:600px){
+  .services-list{grid-template-columns:1fr 1fr;}
+}
 .services-list li::before{content:"• ";color:var(--accent);font-size:1.6rem;vertical-align:sub;}
 
 /* ===================================================== */
@@ -155,9 +169,3 @@ details p{margin-top:.7rem;}
 /* ===================================================== */
 .site-footer{background:#f1f1f1;padding:2rem 0;font-size:.9rem;}
 .footer-flex{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;}
-
-
-
-
-
-
