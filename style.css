@@ -130,7 +130,7 @@ img{width:100%;display:block;border-radius:var(--radius);}
 /* ===================================================== */
 /* — contenitore — */
 .services-list{
-  margin:0 0 0 1.2rem;                     /* niente rientro extra           */
+  margin:0 0 0 0rem;                     /* niente rientro extra           */
   padding:0;                    /* rimuove padding di default     */
   list-style:disc;              /* useremo un pallino custom      */
   max-width:700px;
@@ -189,5 +189,6 @@ details p{margin-top:.7rem;}
 /* ===================================================== */
 .site-footer{background:#f1f1f1;padding:2rem 0;font-size:.9rem;}
 .footer-flex{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;}
+
 
 
