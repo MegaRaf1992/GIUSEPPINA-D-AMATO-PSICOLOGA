@@ -115,9 +115,29 @@ Chiediti: cosa mi sta comunicando attraverso quelle emozioni? Che effetto fanno 
     </div>
   </section>
 
-  <!-- ========== CONTATTI ========== -->
+<!-- ========== CONTATTI ========== -->
   <section id="contatti" class="section-light">
-    <!-- …contenuto invariato (form compreso)… -->
+    <div class="container">
+
+      <h2>Contatti</h2>
+      <p><strong>Email:</strong> <a href="mailto:giusydmt27@gmail.com">giusydmt27@gmail.com</a></p>
+      <p><strong>Telefono:</strong> <a href="tel:‪+393514406526‬">‪+39 351 440 6526‬</a></p>
+      <p><strong>Studio:</strong> Via Duomo 184, Napoli</p>
+
+      <form class="contact-form" name="contatto" method="POST" data-netlify="true">
+        <label>Nome
+          <input type="text" name="nome" required>
+        </label>
+        <label>Email
+          <input type="email" name="email" required>
+        </label>
+        <label>Messaggio
+          <textarea name="messaggio" rows="5" required></textarea>
+        </label>
+        <button type="submit" class="btn-primary">Invia</button>
+      </form>
+
+    </div>
   </section>
 
   <!-- ========== FOOTER ========== -->
@@ -157,4 +177,5 @@ Chiediti: cosa mi sta comunicando attraverso quelle emozioni? Che effetto fanno 
 
 </body>
 </html>
+
 
