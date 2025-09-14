@@ -175,23 +175,13 @@ details p{margin-top:.7rem;}
 .cta .btn-secondary:hover{background:#fff;color:var(--accent);}
 
 /* ===================================================== */
-/* 11. FORM CONTATTI                                     */
-/* ===================================================== */
-.contact-form{display:grid;gap:1.2rem;margin-top:2rem;}
-.contact-form input,
-.contact-form textarea{
-  width:100%;padding:.8rem;border:1px solid #ccc;border-radius:var(--radius);font:inherit;
-}
-.contact-form button{justify-self:start;}
-
-/* ===================================================== */
-/* 12. FOOTER                                            */
+/* 11. FOOTER                                            */
 /* ===================================================== */
 .site-footer{background:#f1f1f1;padding:2rem 0;font-size:.9rem;}
 .footer-flex{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;}
 
 /* ================================
-   13. Bolla WhatsApp flottante
+   12. Bolla WhatsApp flottante
    ================================ */
 .whatsapp-float{
   position:fixed;
@@ -222,3 +212,4 @@ details p{margin-top:.7rem;}
     right:15px;
   }
 }
+
