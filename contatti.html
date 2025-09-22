@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti – Dott.ssa Giusy D'Amato</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a class="brand" href="index.html">Dott.ssa Giusy D’Amato</a>
+
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a class="active" href="contatti.html">Contatti</a></li>
+        </ul>
+      </nav>
+
+      <button id="nav-toggle" aria-label="Apri menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== SEZIONE CONTATTI ===== -->
+  <section class="section-light">
+    <div class="container">
+      <h1>Contatti</h1>
+      <p><strong>Email:</strong> <a href="mailto:giusydmt27@gmail.com">giusydmt27@gmail.com</a></p>
+      <p><strong>Telefono:</strong> <a href="tel:+393514406526">+39 351&nbsp;440&nbsp;6526</a></p>
+      <p><strong>Studio:</strong> Via Duomo&nbsp;184, Napoli</p>
+
+      <h2>Social</h2>
+      <ul>
+        <li><a href="https://wa.me/393514406526" target="_blank" rel="noopener">WhatsApp</a></li>
+        <!-- aggiungi Instagram, LinkedIn, ecc. -->
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER + WA BUTTON ===== -->
+  <footer class="site-footer">
+    <div class="container footer-flex">
+      <p>© 2025 Dott.ssa Giusy D'Amato – Psicologa</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float"
+     href="https://wa.me/393514406526?text=Buongiorno%20Dottoressa%20D%27Amato%2C%20vorrei%20fissare%20un%20colloquio"
+     target="_blank" rel="noopener" aria-label="Chatta su WhatsApp">
+    <img src="images/whatsapp.svg" alt="Icona WhatsApp">
+  </a>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    const btn = document.getElementById('nav-toggle');
+    btn.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      btn.classList.toggle('open');
+      btn.setAttribute('aria-expanded', nav.classList.contains('open'));
+    });
+    document.querySelectorAll('#main-nav a').forEach(link =>
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      })
+    );
+  </script>
+</body>
+</html>
