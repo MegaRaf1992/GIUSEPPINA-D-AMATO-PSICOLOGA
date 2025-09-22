@@ -11,44 +11,37 @@
 </head>
 
 <body>
-  <!-- ========== HEADER / NAV ========== -->
+  <!-- ===== HEADER ===== -->
   <header class="site-header">
     <div class="container nav-wrapper">
+      <a class="brand" href="index.html">Dott.ssa Giusy D’Amato</a>
 
-      <a class="brand" href="#">Dott.ssa Giusy D’Amato</a>
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+      </nav>
 
-  <nav class="main-nav" id="main-nav">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="#chi-sono">Chi Sono</a></li>
-    <li><a href="#servizi">Servizi</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <!-- nuova voce -->
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="risorse.html">Risorse</a></li>
-  </ul>
-</nav>
-
-      <!-- pulsante hamburger / X -->
       <button id="nav-toggle" aria-label="Apri menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-
     </div>
   </header>
-  <!-- ========== HERO ========== -->
+
+  <!-- ===== HERO ===== -->
   <section class="hero">
     <div class="overlay"></div>
     <div class="container hero-content">
-      <h1>Psicologa &amp; Psicoterapeuta</h1>
+      <h1>Psicologa&nbsp;&amp;&nbsp;Psicoterapeuta</h1>
       <p>Sostegno individuale, di coppia e consulenze online per il tuo benessere psicologico.</p>
-      <a href="https://www.miodottore.it/giusy-d-amato/psicologo/napoli"
-         class="btn-primary"
-         target="_blank" rel="noopener">
-        Prenota un colloquio
-      </a>
+      <a class="btn-primary" href="https://www.miodottore.it/giusy-d-amato/psicologo/napoli"
+         target="_blank" rel="noopener">Prenota un colloquio</a>
     </div>
   </section>
+
    <!-- ========== CHI SONO ========== -->
   <section id="chi-sono" class="section-about">
     <div class="container">
@@ -130,42 +123,40 @@ Chiediti: cosa mi sta comunicando attraverso quelle emozioni? Che effetto fanno 
     </div>
   </section>
 
-  <!-- ========== FOOTER ========== -->
+ <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
     <div class="container footer-flex">
       <p>© 2025 Dott.ssa Giusy D'Amato – Psicologa</p>
     </div>
   </footer>
 
-  <!-- ========== WHATSAPP FLOATING BUTTON ========== -->
-<a href="https://wa.me/393514406526?text=Buongiorno%20Dottoressa%20D%27Amato%2C%20vorrei%20fissare%20un%20colloquio"
-   class="whatsapp-float"
-   target="_blank" rel="noopener"
-   aria-label="Chatta su WhatsApp">
-  <img src="images/whatsapp.svg" alt="Icona WhatsApp">
-</a>
-  <!-- ========== SCRIPT NAV MOBILE ========== -->
+  <!-- ===== WHATSAPP BUTTON ===== -->
+  <a class="whatsapp-float"
+     href="https://wa.me/393514406526?text=Buongiorno%20Dottoressa%20D%27Amato%2C%20vorrei%20fissare%20un%20colloquio"
+     target="_blank" rel="noopener" aria-label="Chatta su WhatsApp">
+    <img src="images/whatsapp.svg" alt="Icona WhatsApp">
+  </a>
+
+  <!-- ===== NAV SCRIPT ===== -->
   <script>
-    const nav    = document.getElementById('main-nav');
-    const toggle = document.getElementById('nav-toggle');
-
-    toggle.addEventListener('click', () => {
+    const nav = document.getElementById('main-nav');
+    const btn = document.getElementById('nav-toggle');
+    btn.addEventListener('click', () => {
       nav.classList.toggle('open');
-      toggle.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', nav.classList.contains('open'));
+      btn.classList.toggle('open');
+      btn.setAttribute('aria-expanded', nav.classList.contains('open'));
     });
-
     document.querySelectorAll('#main-nav a').forEach(link =>
       link.addEventListener('click', () => {
         nav.classList.remove('open');
-        toggle.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
       })
     );
   </script>
-
 </body>
 </html>
+
 
 
 
