@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ – Dott.ssa Giusy D'Amato</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a class="brand" href="index.html">Dott.ssa Giusy D’Amato</a>
+
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a class="active" href="faq.html">FAQ</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+      </nav>
+
+      <button id="nav-toggle" aria-label="Apri menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section-light">
+    <div class="container">
+      <h1>Domande frequenti</h1>
+
+      <details open>
+        <summary>Non riesco a rilassarmi, la mia mente corre sempre: cosa posso fare?</summary>
+        <p>Quando la mente è iperattiva è utile imparare tecniche di grounding e mindfulness. Un percorso di psicoterapia può aiutarti a riconoscere le radici di questa agitazione e a sviluppare strategie personalizzate.</p>
+      </details>
+
+      <details>
+        <summary>Litighiamo sempre per le stesse cose: è normale?</summary>
+        <p>I conflitti ricorrenti spesso nascondono bisogni non espressi. In terapia di coppia si lavora sul modello di comunicazione per trasformare la lite in dialogo costruttivo.</p>
+      </details>
+
+      <details>
+        <summary>Mio figlio fatica a gestire le emozioni: come possiamo aiutarlo?</summary>
+        <p>Con i bambini è importante dare un nome alle emozioni e modellare comportamenti di autoregolazione. Si possono creare giochi e routine che gli insegnano a riconoscere e comunicare quello che prova.</p>
+      </details>
+
+      <!-- aggiungi altre FAQ a piacere -->
+    </div>
+  </section>
+
+  <!-- ===== FOOTER + WA BUTTON ===== -->
+  <footer class="site-footer">
+    <div class="container footer-flex">
+      <p>© 2025 Dott.ssa Giusy D'Amato – Psicologa</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float"
+     href="https://wa.me/393514406526?text=Buongiorno%20Dottoressa%20D%27Amato%2C%20vorrei%20fissare%20un%20colloquio"
+     target="_blank" rel="noopener" aria-label="Chatta su WhatsApp">
+    <img src="images/whatsapp.svg" alt="Icona WhatsApp">
+  </a>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    const btn = document.getElementById('nav-toggle');
+    btn.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      btn.classList.toggle('open');
+      btn.setAttribute('aria-expanded', nav.classList.contains('open'));
+    });
+    document.querySelectorAll('#main-nav a').forEach(link =>
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      })
+    );
+  </script>
+</body>
+</html>
