@@ -23,8 +23,10 @@
 /* ===================================================== */
 body{font-family:var(--sans);line-height:1.6;color:var(--primary);background:var(--light);}
 h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.3;color:var(--primary);}
-h1{font-size:clamp(2rem,4vw + 1rem,3.4rem);}
-h2{font-size:clamp(1.5rem,3vw + .5rem,2.4rem);margin-bottom:.7em;}
+.hero-name{font-size:clamp(2rem,6vw + .5rem,3.75rem);}
+.hero-role{font-size:clamp(1.4rem,3.5vw + .3rem,2.4rem);margin:.3rem 0 .9rem 0;}
+.hero-desc{font-size:clamp(1rem,2.2vw + .2rem,1.25rem);}
+h2:not(.hero-role){font-size:clamp(1.5rem,3vw + .5rem,2.4rem);margin-bottom:.7em;}
 p,li{font-size:1.05rem;}
 
 /* ===================================================== */
@@ -41,9 +43,16 @@ img{display:block;width:100%;border-radius:var(--radius);}
 /* ===================================================== */
 /* 4. HEADER & MENU DRAWER                               */
 /* ===================================================== */
-.site-header{background:#fff;height:78px;position:sticky;top:0;z-index:80;border-bottom:1px solid #eaeaea;}
-.nav-wrapper{display:flex;align-items:center;justify-content:space-between;height:100%;}
-.logo{height:64px;width:auto;}             /* logo più grande */
+.site-header{background:#fff;padding:1rem 0;position:sticky;top:0;z-index:80;border-bottom:1px solid #eaeaea;}
+.nav-wrapper{display:flex;align-items:center;justify-content:space-between;position:relative;}
+.logo{height:192px;width:auto;}   /* 3× più grande (desktop) */
+
+/* logo centrato e grande su smartphone */
+@media(max-width:600px){
+  .logo{height:220px;}
+  .nav-wrapper{justify-content:center;}
+  #nav-toggle{right:1rem;top:1rem;}
+}
 
 .main-nav{
   position:fixed;top:0;right:0;bottom:0;
@@ -59,45 +68,53 @@ img{display:block;width:100%;border-radius:var(--radius);}
 .main-nav a:hover::after,.main-nav a.active::after{width:100%;}
 
 /* hamburger */
-#nav-toggle{display:flex;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;
-            position:fixed;top:1.1rem;right:1rem;z-index:130;}
-#nav-toggle span{width:26px;height:2px;background:var(--primary);transition:transform .3s,opacity .3s;}
-#nav-toggle.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+#nav-toggle{display:flex;flex-direction:column;gap:6px;background:none;border:0;cursor:pointer;
+            position:fixed;top:1.5rem;right:1.5rem;z-index:130;}
+#nav-toggle span{width:30px;height:2px;background:var(--primary);transition:transform .3s,opacity .3s;}
+#nav-toggle.open span:nth-child(1){transform:translateY(9px) rotate(45deg);}
 #nav-toggle.open span:nth-child(2){opacity:0;}
-#nav-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+#nav-toggle.open span:nth-child(3){transform:translateY(-9px) rotate(-45deg);}
 
 /* ===================================================== */
 /* 5. HERO                                               */
 /* ===================================================== */
-.hero{padding:2.5rem 0 2rem;}
+.hero{padding:1.5rem 0 1rem;}
 .hero-box{
   background:var(--cream);
-  border-radius:32px 32px 0 0;          /* arrotondato sopra */
-  display:grid;grid-template-columns:2fr 1fr;align-items:center;gap:2rem;
-  padding:3rem 2.5rem;                  /* spessore interno */
-  min-height:55vh;                      /* circa 1/4 meno rispetto a 75vh */
+  border-radius:28px 28px 0 0;
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  align-items:end;           /* foto allineata in basso */
+  gap:1.8rem;
+  padding:2rem 2rem 1.2rem;
+  min-height:30vh;           /* metà della dimensione precedente */
+  position:relative;
+  overflow:hidden;
 }
-@media(max-width:900px){
-  .hero-box{grid-template-columns:3fr 2fr;}  /* due colonne anche su mobile */
-}
+/* testo a sinistra, foto destra anche su smartphone */
 @media(max-width:600px){
-  .hero-box{grid-template-columns:2fr 1fr;padding:2rem 1.5rem;}
+  .hero-box{grid-template-columns:3fr 2fr;padding:1.5rem 1rem;min-height:28vh;}
 }
 .hero-text{text-align:left;}
-.hero-text p{font-size:1.2rem;margin:1.1rem 0 2rem;max-width:32ch;}
-.hero-photo{max-width:380px;width:100%;object-fit:contain;margin-left:auto;}
-@media(max-width:600px){.hero-photo{max-width:240px;}}
+.hero-photo{
+  max-width:320px;
+  width:100%;
+  object-fit:contain;
+  align-self:end;
+  margin-bottom:-10%;        /* esce leggermente dal box    */
+}
+@media(max-width:600px){
+  .hero-photo{max-width:250px;margin-bottom:-12%;}
+}
 
-/* ===================================================== */
-/* 6. GREEN BAR (sotto la hero)                          */
-/* ===================================================== */
+/* linea verde sotto */
 .bottom-green-bar{height:6px;background:var(--green-bar);}
 
 /* ===================================================== */
-/* 7. BUTTONS                                            */
+/* 6. BUTTONS                                            */
 /* ===================================================== */
 .btn-primary,.btn-secondary{
-  display:inline-block;padding:.9rem 2.1rem;font-weight:600;border-radius:var(--radius);transition:background .3s,color .3s;
+  display:inline-block;padding:.8rem 2rem;font-weight:600;border-radius:var(--radius);transition:background .3s,color .3s;
 }
 .btn-primary{background:var(--accent);color:#fff;}
 .btn-primary:hover{background:var(--accent-hover);}
@@ -105,6 +122,67 @@ img{display:block;width:100%;border-radius:var(--radius);}
 .btn-secondary:hover{background:var(--accent);color:#fff;}
 
 /* ===================================================== */
-/* 8. CHI SONO – nasconde eventuale vecchia immagine     */
+/* 7. CHI SONO                                           */
 /* ===================================================== */
-#chi-sono .about-img{display:none;}
+.section-about .about-text p + p{margin-top:1.2rem;}
+.about-img{max-width:240px;margin-inline:auto;margin-bottom:2rem;aspect-ratio:4/5;overflow:hidden;}
+.about-img img{height:100%;width:100%;object-fit:cover;border-radius:50%;
+               box-shadow:0 8px 16px rgba(0,0,0,.1);}
+@media(min-width:900px){
+  #chi-sono .container{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:3rem;}
+  #chi-sono .about-img{order:2;margin-bottom:0;}
+}
+
+/* ===================================================== */
+/* 8. SERVIZI                                            */
+/* ===================================================== */
+.services-list{margin:0 0 0 1.2rem;list-style:disc;max-width:700px;}
+.services-list li{display:flex;align-items:flex-start;margin:0 0 1rem 0;text-align:left;}
+.services-list li::before{content:"";width:.55rem;height:.55rem;margin-right:.6rem;margin-top:.45em;
+                          border-radius:50%;background:var(--accent);flex:0 0 auto;}
+
+/* ===================================================== */
+/* 9. FAQ (riutilizzata anche in faq.html)               */
+/* ===================================================== */
+details{border-bottom:1px solid #ddd;padding:1rem 0;}
+summary{cursor:pointer;font-weight:600;position:relative;padding-right:1.5rem;}
+summary::after{content:"+";position:absolute;right:0;transition:transform .3s;}
+details[open] summary::after{transform:rotate(45deg);}
+details p{margin-top:.7rem;}
+
+/* ===================================================== */
+/* 10. CALL TO ACTION                                    */
+/* ===================================================== */
+.cta{background:var(--accent);color:#fff;text-align:center;padding:3.5rem 0;}
+.cta h2{margin-bottom:.4em;}
+.cta .btn-secondary{border-color:#fff;color:#fff;}
+.cta .btn-secondary:hover{background:#fff;color:var(--accent);}
+
+/* ===================================================== */
+/* 11. BLOG – griglia CARD                               */
+/* ===================================================== */
+.blog-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:2rem;}
+.blog-card{border:1px solid #e0e0e0;border-radius:8px;overflow:hidden;background:#fff;
+           transition:transform .2s,box-shadow .2s;}
+.blog-card:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(0,0,0,.12);}
+.blog-card img{width:100%;height:180px;object-fit:cover;}
+.blog-card h3{padding:1rem 1.2rem 0;font-size:1.25rem;}
+.blog-card p{padding:0 1.2rem 1.2rem;color:#555;font-size:.95rem;}
+
+/* ===================================================== */
+/* 12. FOOTER                                            */
+/* ===================================================== */
+.site-footer{background:#f1f1f1;padding:2rem 0;font-size:.9rem;}
+.footer-flex{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;}
+
+/* ===================================================== */
+/* 13. Bolla WhatsApp                                    */
+/* ===================================================== */
+.whatsapp-float{position:fixed;width:60px;height:60px;bottom:20px;right:20px;
+                z-index:100;border-radius:50%;overflow:hidden;
+                box-shadow:0 4px 12px rgba(0,0,0,.25);transition:transform .25s;}
+.whatsapp-float:hover{transform:scale(1.08);}
+.whatsapp-float img{width:100%;height:100%;display:block;}
+@media(max-width:600px){
+  .whatsapp-float{width:50px;height:50px;bottom:15px;right:15px;}
+}
