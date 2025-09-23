@@ -5,16 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dott.ssa Giusy D'Amato – Psicologa</title>
 
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- ===== HEADER ===== -->
+  <!-- ===== HEADER ==================================================== -->
   <header class="site-header">
     <div class="container nav-wrapper">
-      <a class="brand" href="index.html">Dott.ssa Giusy D’Amato</a>
 
+      <!-- logo -->
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="Logo Giusy D’Amato" class="logo">
+      </a>
+
+      <!-- menu drawer -->
       <nav class="main-nav" id="main-nav">
         <ul>
           <li><a class="active" href="index.html">Home</a></li>
@@ -24,24 +30,40 @@
         </ul>
       </nav>
 
+      <!-- hamburger / X -->
       <button id="nav-toggle" aria-label="Apri menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
+
     </div>
   </header>
 
-  <!-- ===== HERO CON IMMAGINE ===== -->
+  <!-- riga verde sotto l’header -->
+  <div class="top-green-bar"></div>
+
+  <!-- ===== HERO ====================================================== -->
   <section class="hero">
-    <div class="overlay"></div>
-    <div class="container hero-content">
-      <h1>Psicologa&nbsp;&amp;&nbsp;Psicoterapeuta</h1>
-      <p>Sostegno individuale, di coppia e consulenze online per il tuo benessere psicologico.</p>
-      <a class="btn-primary"
-         href="https://www.miodottore.it/giusy-d-amato/psicologo/napoli"
-         target="_blank" rel="noopener">Prenota un colloquio</a>
+    <div class="container hero-inner">
+
+      <div class="hero-text">
+        <h1>Psicologa e&nbsp;Psicoterapeuta</h1>
+        <p>Sostegno individuale, di coppia e consulenze online per il tuo benessere psicologico.</p>
+
+        <a class="btn-primary"
+           href="https://www.miodottore.it/giusy-d-amato/psicologo/napoli"
+           target="_blank" rel="noopener">
+          Prenota un colloquio
+        </a>
+      </div>
+
+      <!-- foto scontornata -->
+      <img src="images/foto-ritratto.png"
+           alt="Dott.ssa Giusy D’Amato"
+           class="hero-photo"
+           loading="lazy">
+
     </div>
   </section>
-
    <!-- ========== CHI SONO ========== -->
   <section id="chi-sono" class="section-about">
     <div class="container">
@@ -137,25 +159,28 @@ Chiediti: cosa mi sta comunicando attraverso quelle emozioni? Che effetto fanno 
     <img src="images/whatsapp.svg" alt="Icona WhatsApp">
   </a>
 
- <!-- ===== NAV SCRIPT ===== -->
+ <!-- ===== SCRIPT NAV DRAWER ======================================== -->
   <script>
-    const nav = document.getElementById('main-nav');
-    const btn = document.getElementById('nav-toggle');
-    btn.addEventListener('click', () => {
+    const nav    = document.getElementById('main-nav');
+    const toggle = document.getElementById('nav-toggle');
+
+    toggle.addEventListener('click', () => {
       nav.classList.toggle('open');
-      btn.classList.toggle('open');
-      btn.setAttribute('aria-expanded', nav.classList.contains('open'));
+      toggle.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', nav.classList.contains('open'));
     });
+
     document.querySelectorAll('#main-nav a').forEach(link =>
       link.addEventListener('click', () => {
         nav.classList.remove('open');
-        btn.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
       })
     );
   </script>
 </body>
 </html>
+
 
 
 
