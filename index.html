@@ -82,29 +82,43 @@
         <div class="hero-bar"></div>
     </section>
     
-    <script>
-        // Mobile menu functionality
+<script>
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const closeMenuBtn = document.querySelector('.close-menu');
         const mobileMenu = document.querySelector('.mobile-menu');
         
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
-        });
+        if(mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function() {
+                if(mobileMenu) {
+                    mobileMenu.classList.add('active');
+                }
+            });
+        }
         
-        closeMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-        });
+        if(closeMenuBtn) {
+            closeMenuBtn.addEventListener('click', function() {
+                if(mobileMenu) {
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        }
         
         // Close menu when clicking outside
-        document.addEventListener('click', (event) => {
-            if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target) && mobileMenu.classList.contains('active')) {
+        document.addEventListener('click', function(event) {
+            if (mobileMenu && mobileMenuBtn && 
+                !mobileMenu.contains(event.target) && 
+                !mobileMenuBtn.contains(event.target) && 
+                mobileMenu.classList.contains('active')) {
                 mobileMenu.classList.remove('active');
             }
         });
-    </script>
+    });
+</script>
 </body>
 </html>
+
 
 
 
