@@ -161,7 +161,6 @@ nav ul li a:hover {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: var(--ombra-testo);
     margin: 0;
 }
 
@@ -291,6 +290,7 @@ h1 {
         font-size: 16px;
     }
 }
+
 
 
 
