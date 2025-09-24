@@ -51,12 +51,16 @@ header {
     padding: 20px 0;
 }
 
+/* Logo come immagine */
 .logo {
-    font-family: 'Poppins', sans-serif;
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--grigio);
+    display: block;
     text-decoration: none;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
 }
 
 nav ul {
@@ -247,12 +251,16 @@ h1 {
         justify-content: center;
     }
     
+    /* Logo centrato su mobile */
     .logo {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         z-index: 10;
-        font-size: 20px;
+    }
+    
+    .logo img {
+        height: 40px;
     }
     
     .mobile-menu-btn {
@@ -316,12 +324,3 @@ h1 {
         font-size: 16px;
     }
 }
-
-
-
-
-
-
-
-
-
