@@ -5,6 +5,8 @@
     --grigio: #333333;
     --verde-salvia: #A9C5A0;
     --ombra-testo: 0 2px 4px rgba(0,0,0,0.1);
+    --serif:'Playfair Display',serif;
+    --sans :'Lato',Arial,sans-serif;
 }
 
 * {
@@ -14,14 +16,14 @@
 }
 
 body {
-    font-family: 'Lora', serif;
+    font-family:var(--sans)
     color: var(--grigio);
     background-color: var(--crema);
     line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
+    font-family:var(--serif)
     font-weight: 600;
 }
 
@@ -286,5 +288,6 @@ h1 {
         font-size: 16px;
     }
 }
+
 
 
