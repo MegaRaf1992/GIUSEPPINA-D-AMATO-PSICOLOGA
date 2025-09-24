@@ -1,4 +1,6 @@
-/* Reset e variabili */
+/* =====================================================
+   RESET & ROOT VARIABLES
+   ===================================================== */
 :root {
     --giallo: #f4b400;
     --crema: #F5EFE6;
@@ -15,6 +17,9 @@
     box-sizing: border-box;
 }
 
+/* =====================================================
+   BASE TYPOGRAPHY & LAYOUT
+   ===================================================== */
 body {
     font-family: var(--sans);
     color: var(--grigio);
@@ -34,7 +39,9 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 20px;
 }
 
-/* Header - Desktop */
+/* =====================================================
+   HEADER — DESKTOP (≥ 769 px)
+   ===================================================== */
 header {
     background-color: white;
     box-shadow: var(--ombra-testo);
@@ -51,28 +58,29 @@ header {
     padding: 20px 0;
 }
 
-/* Logo come immagine */
+/* Logo */
 .logo {
     display: block;
     text-decoration: none;
 }
 
-.logo img {
-    height: 50px;
+.logo img {                 /* ① logo più grande su desktop */
+    height: 70px;           /* era 50px */
     width: auto;
     display: block;
 }
 
-nav ul {
+/* Desktop navigation */
+nav.desktop-nav ul {
     display: flex;
     list-style: none;
 }
 
-nav ul li {
-    margin-left: 30px;
+nav.desktop-nav ul li {
+    margin-left: 50px;      /* ② più spazio fra le voci (era 30) */
 }
 
-nav ul li a {
+nav.desktop-nav ul li a {
     text-decoration: none;
     color: var(--grigio);
     font-family: 'Poppins', sans-serif;
@@ -80,11 +88,13 @@ nav ul li a {
     transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
+nav.desktop-nav ul li a:hover {
     color: var(--giallo);
 }
 
-/* Header - Mobile */
+/* =====================================================
+   MOBILE BUTTON & MOBILE MENU (di base nascosti)
+   ===================================================== */
 .mobile-menu-btn {
     display: none;
     background: none;
@@ -94,12 +104,13 @@ nav ul li a:hover {
     color: var(--grigio);
 }
 
+/* Off-canvas menu (slide from right) */
 .mobile-menu {
     display: block;
     position: fixed;
     top: 0;
     right: -100%;
-    width: 70%;
+    width: 100%;            /* ③ larghezza piena (era 70%) */
     height: 100vh;
     background-color: white;
     box-shadow: -5px 0 15px rgba(0,0,0,0.1);
@@ -136,10 +147,15 @@ nav ul li a:hover {
 }
 
 .mobile-menu nav ul li a {
-    font-size: 18px;
+    font-size: 22px;        /* ④ voci più grandi su mobile */
+    font-weight: 600;
+    color: var(--grigio);
+    text-decoration: none;
 }
 
-/* Hero Section */
+/* =====================================================
+   HERO SECTION
+   ===================================================== */
 .hero {
     padding: 150px 0 80px;
     position: relative;
@@ -161,17 +177,13 @@ nav ul li a:hover {
     position: relative;
     display: flex;
     justify-content: flex-end;
-    padding: 0;
-    margin: 0;
 }
 
 .hero-image img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    margin: 0;
     display: block;
-    padding: 0;
 }
 
 .hero-bar {
@@ -197,8 +209,8 @@ h1 {
 
 .hero p {
     font-size: 18px;
-    margin-bottom: 40px;
-    max-width: 650px;
+    margin-bottom: 40px;    /* ⑤ margine extra desktop (era 30) */
+    max-width: 650px;       /* leggermente più largo */
 }
 
 .cta-button {
@@ -222,106 +234,87 @@ h1 {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* Responsive Design */
+/* =====================================================
+   RESPONSIVE BREAKPOINTS
+   ===================================================== */
+
+/* ---------- Tablet (≤ 992 px) ---------- */
 @media (max-width: 992px) {
-    h1 {
-        font-size: 40px;
-    }
-    
-    .subtitle {
-        font-size: 20px;
-    }
-    
-    .hero p {
-        font-size: 16px;
-    }
+    h1 { font-size: 40px; }
+    .subtitle { font-size: 20px; }
+    .hero p { font-size: 16px; }
 }
 
+/* ---------- Mobile / Small Tablet (≤ 768 px) ---------- */
 @media (max-width: 768px) {
-    .mobile-menu-btn {
-        display: block;
-    }
-    
-    nav.desktop-nav {
-        display: none;
-    }
-    
+
+    /* Header adjustments */
     .header-container {
         position: relative;
         justify-content: center;
     }
-    
-    /* Logo centrato su mobile */
+
+    /* Burger visible */
+    .mobile-menu-btn {
+        display: block;
+        position: absolute;
+        right: 20px;
+        z-index: 11;
+    }
+
+    /* Desktop nav hidden */
+    nav.desktop-nav {
+        display: none;
+    }
+
+    /* Logo centrato e leggermente più grande (45 px) */
     .logo {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         z-index: 10;
     }
-    
     .logo img {
-        height: 40px;
+        height: 45px;       /* era 40px */
     }
-    
-    .mobile-menu-btn {
-        position: absolute;
-        right: 20px;
-        z-index: 10;
-        display: block;
-    }
-    
+
+    /* Hero layout verticale */
     .hero-content {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .hero-text {
         padding-right: 0;
         margin-bottom: 40px;
     }
-    
+
     .hero-text p {
-        margin: 0 auto 30px;
+        margin: 0 auto 35px; /* ⑥ margini mobile */
+        padding: 0 10px;
     }
-    
+
     .hero-image {
         justify-content: center;
         width: 100%;
     }
-    
-    .hero-image img {
-        max-width: 80%;
-    }
-    
-    h1 {
-        font-size: 36px;
-    }
-    
-    .subtitle {
-        font-size: 18px;
-    }
+    .hero-image img { max-width: 80%; }
+
+    h1 { font-size: 36px; }
+    .subtitle { font-size: 18px; }
 }
 
+/* ---------- Extra-small mobile (≤ 480 px) ---------- */
 @media (max-width: 480px) {
-    .hero {
-        padding: 120px 0 60px;
-    }
-    
-    h1 {
-        font-size: 32px;
-    }
-    
-    .subtitle {
-        font-size: 16px;
-    }
-    
-    .hero p {
-        font-size: 14px;
-    }
-    
+    .hero { padding: 120px 0 60px; }
+
+    h1 { font-size: 32px; }
+    .subtitle { font-size: 16px; }
+
+    .hero p { font-size: 14px; }
+
     .cta-button {
         padding: 12px 30px;
         font-size: 16px;
     }
 }
-
