@@ -177,7 +177,7 @@ h1 {
 
 .subtitle {
     font-size: 24px;
-    color: var(--verde-salvia);
+    color: var(--grigio);
     margin-bottom: 25px;
 }
 
@@ -286,4 +286,5 @@ h1 {
         font-size: 16px;
     }
 }
+
 
