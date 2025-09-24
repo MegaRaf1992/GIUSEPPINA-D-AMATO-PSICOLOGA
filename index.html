@@ -1,212 +1,82 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dott.ssa Giusy D'Amato – Psicologa</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dott.ssa Giusy D'Amato - Psicologa e Psicoterapeuta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Lora:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- ========= HEADER ================================================= -->
-  <header class="site-header">
-    <div class="container nav-wrapper">
-      <a href="index.html" class="logo-link">
-        <img src="images/logo.png" class="logo" alt="Logo Giusy D’Amato">
-      </a>
-
-      <nav id="main-nav" class="main-nav">
-        <ul>
-          <li><a class="active" href="index.html">Home</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contatti.html">Contatti</a></li>
-        </ul>
-      </nav>
-
-      <!-- hamburger solo mobile -->
-      <button id="nav-toggle" aria-label="Apri menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- ========= HERO =================================================== -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-box">
-        <div class="hero-text">
-          <h1 class="text-title">Dott.ssa&nbsp;Giusy&nbsp;D’Amato</h1>
-          <h2 class="text-subtitle">Psicologa e Psicoterapeuta&nbsp;Napoli</h2>
-          <p  class="text-body">Sostegno individuale, di coppia e consulenza online per il tuo benessere psicologico.</p>
-
-          <a class="btn-primary text-button"
-             href="https://www.miodottore.it/giusy-d-amato/psicologo/napoli"
-             target="_blank" rel="noopener">
-            Prenota un colloquio
-          </a>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Dott.ssa Giusy D'Amato</a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Contatti</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn">☰</button>
         </div>
-
-        <img src="images/foto-ritratto.png"
-             class="hero-photo"
-             alt="Dott.ssa Giusy D’Amato"
-             loading="lazy">
-      </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <button class="close-menu">×</button>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Contatti</a></li>
+            </ul>
+        </nav>
     </div>
-  </section>
-
-  <div class="bottom-green-bar"></div>
-
-  <!-- ========= CHI SONO ============================================== -->
-  <section id="chi-sono" class="section-about">
-    <div class="container">
-      <div class="about-text">
-        <h2 class="text-title">Chi Sono</h2>
-
-        <p class="text-body">
-          
-          Benvenuti a tutti in questo spazio sicuro dove potrete trovare ascolto, comprensione e nuove possibilità.
-          Sono Giusy D’Amato, psicologa dello sviluppo e psicoterapeuta sistemico-relazionale, specializzata presso
-          l’Istituto I.Te.R. e iscritta all’Ordine degli Psicologi della Regione Campania (n. 8738). Sono anche
-          terapeuta EMDR e analista del comportamento, iscritta ai registri Siacsa e ABAIT.
-        </p>
-
-        <p class="text-body">
-          
-          Credo nel potere delle parole: se dette nel momento giusto, possono dare vita a grandi cambiamenti.
-          Sono specializzata nel trattamento dell’ansia, della depressione, di difficoltà relazionali,
-          familiari e di coppia, nonché di disagi adolescenziali e dell'infanzia.
-          Mi occupo di creare programmi specifici per bambini ed adolescenti con neurodivergenze
-          insieme alla mia&nbsp;equipe altamente specializzata.
-        </p>
-
-        <p class="text-body">
-          
-          La psicologia non è solo il mio lavoro, ma soprattutto la mia più grande passione.
-          Credo che ogni persona possieda risorse uniche che, se riconosciute e valorizzate,
-          possono diventare la chiave per affrontare le difficoltà e vivere con maggiore serenità.
-          È nell'incontro con l'altro che le ferite trovano spazio per guarire e le risorse per sbocciare.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========= SERVIZI =============================================== -->
-  <section id="servizi" class="section-light">
-    <div class="container">
-      <h2 class="text-title">Servizi</h2>
-      <ul class="services-list text-body">
-        <li>Colloqui individuali (in presenza e online)</li>
-        <li>Terapia di coppia</li>
-        <li>Supporto psicologico per adolescenti</li>
-        <li>Gestione di ansia, stress, autostima e relazioni</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ========= FAQ ==================================================== -->
-  <section id="faq">
-    <div class="container">
-      <h2 class="text-title">Domande Frequenti</h2>
-
-      <details>
-        <summary class="text-subtitle">
-          La mia mente è sempre in movimento: come posso rilassarmi?
-        </summary>
-        <p class="text-body">
-          Quando senti che la tua mente corre senza tregua, è come se fossi intrappolato in un dialogo interiore
-          che non trova mai fine. […testo abbreviato…]
-        </p>
-      </details>
-
-      <details>
-        <summary class="text-subtitle">
-          Litighiamo spesso per le stesse cose e non troviamo una via d’uscita.
-        </summary>
-        <p class="text-body">
-          Quando una coppia si ritrova a discutere sugli stessi temi, spesso non è il contenuto della lite a contare,
-          ma il copione che si ripete. […testo abbreviato…]
-        </p>
-      </details>
-
-      <details>
-        <summary class="text-subtitle">
-          Abbiamo la sensazione che nostro figlio faccia fatica a gestire le sue emozioni.
-        </summary>
-        <p class="text-body">
-          Le emozioni di un bambino sono come messaggi che cercano di trovare
-          le parole giuste per arrivare a chi gli sta accanto. […testo abbreviato…]
-        </p>
-      </details>
-    </div>
-  </section>
-
-  <!-- ========= CTA ==================================================== -->
-  <section class="cta">
-    <div class="container">
-      <h2 class="text-title">Pronto a iniziare?</h2>
-      <p  class="text-body">Contattami per fissare un primo colloquio conoscitivo.</p>
-      <a href="https://www.miodottore.it/giusy-d-amato/psicologo/napoli"
-         class="btn-secondary text-button"
-         target="_blank" rel="noopener">
-        Prenota un colloquio
-      </a>
-    </div>
-  </section>
-
-  <!-- ========= CONTATTI ============================================== -->
-  <section id="contatti" class="section-light">
-    <div class="container">
-      <h2 class="text-title">Contatti</h2>
-
-      <p class="text-body"><strong>Email:</strong>
-        <a href="mailto:giusydmt27@gmail.com">giusydmt27@gmail.com</a>
-      </p>
-      <p class="text-body"><strong>Telefono:</strong>
-        <a href="tel:+393514406526">+39&nbsp;351&nbsp;440&nbsp;6526</a>
-      </p>
-      <p class="text-body"><strong>Studio:</strong> Via&nbsp;Duomo&nbsp;184, Napoli</p>
-    </div>
-  </section>
-
-  <!-- ========= FOOTER ================================================= -->
-  <footer class="site-footer">
-    <div class="container footer-flex">
-      <p class="text-body">© 2025 Dott.ssa Giusy D'Amato – Psicologa</p>
-    </div>
-  </footer>
-
-  <!-- ========= WHATSAPP BUTTON ======================================= -->
-  <a class="whatsapp-float"
-     href="https://wa.me/393514406526?text=Buongiorno%20Dottoressa%20D%27Amato%2C%20vorrei%20fissare%20un%20colloquio"
-     target="_blank" rel="noopener" aria-label="Chatta su WhatsApp">
-    <img src="images/whatsapp.svg" alt="Icona WhatsApp">
-  </a>
-
-  <!-- ========= NAV SCRIPT ============================================ -->
-  <script>
-    const nav    = document.getElementById('main-nav');
-    const toggle = document.getElementById('nav-toggle');
-
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('open');
-      toggle.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', nav.classList.contains('open'));
-    });
-
-    document.querySelectorAll('#main-nav a').forEach(link =>
-      link.addEventListener('click', () => {
-        nav.classList.remove('open');
-        toggle.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      })
-    );
-  </script>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Dott.ssa Giusy D'Amato</h1>
+                <div class="subtitle">Psicologa e Psicoterapeuta</div>
+                <p>Sostegno individuale, di coppia e consulenza online per il tuo benessere psicologico.</p>
+                <a href="#" class="cta-button">Prenota una consulenza</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://placehold.co/400x500/E5E5E5/333333?text=Foto+Professionale" alt="Dott.ssa Giusy D'Amato">
+            </div>
+        </div>
+        <div class="hero-bar"></div>
+    </section>
+    
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const closeMenuBtn = document.querySelector('.close-menu');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+        
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target) && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
+
 
 
 
