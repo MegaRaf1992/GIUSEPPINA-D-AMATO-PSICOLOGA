@@ -165,7 +165,6 @@ nav ul li a:hover {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    /* RIMOSSA l'ombra che causava lo "sfondo quadrato" */
     margin: 0;
     display: block;
     padding: 0;
@@ -243,7 +242,6 @@ h1 {
         display: none;
     }
     
-    /* FIX LOGO CENTRATO NELLA VERSIONE MOBILE */
     .header-container {
         position: relative;
         justify-content: center;
@@ -318,6 +316,7 @@ h1 {
         font-size: 16px;
     }
 }
+
 
 
 
