@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Ansia: Riconoscerla e gestirla | Dott.ssa Giusy D’Amato Psicologa Napoli</title>
+  <meta name="description" content="L’ansia può essere compresa e regolata. Segnali, cause, strumenti pratici e quando chiedere aiuto. Studio di psicologia a Napoli, Via Duomo 184.">
+
+  <!-- FAVICON -->
+  <link rel="icon" href="/images/favicon.png" sizes="any">
+
+  <!-- CSS principali -->
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/script.css"> <!-- stili aggiuntivi per articoli -->
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Ansia: Riconoscerla e gestirla">
+  <meta property="og:description" content="Riconoscere i segnali dell’ansia e imparare a gestirla con strumenti pratici.">
+  <meta property="og:image" content="https://www.psicologadamato.it/images/hero-ansia.jpg">
+  <meta property="og:url" content="https://www.psicologadamato.it/blog/ansia-riconoscerla-e-gestirla">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.psicologadamato.it/blog/ansia-riconoscerla-e-gestirla">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BlogPosting",
+    "headline":"Ansia: Riconoscerla e gestirla",
+    "image":"https://www.psicologadamato.it/images/hero-ansia.jpg",
+    "author":{"@type":"Person","name":"Dott.ssa Giusy D’Amato"},
+    "publisher":{"@type":"Organization","name":"Studio di Psicologia D’Amato","logo":{"@type":"ImageObject","url":"https://www.psicologadamato.it/images/logo.png"}},
+    "datePublished":"2025-10-11",
+    "dateModified":"2025-10-11",
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://www.psicologadamato.it/blog/ansia-riconoscerla-e-gestirla"},
+    "description":"Segnali, cause e strategie pratiche per riconoscere e gestire l’ansia."
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header (opzionale: se già incluso via template, rimuovi questo blocco) -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a class="brand" href="/">Dott.ssa Giusy D’Amato</a>
+      <button id="nav-toggle" aria-label="Apri menù" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" aria-label="Principale">
+        <ul>
+          <li><a href="/" >Home</a></li>
+          <li><a href="/#chi-sono">Chi sono</a></li>
+          <li><a href="/#servizi">Servizi</a></li>
+          <li><a class="active" href="/blog.html">Blog</a></li>
+          <li><a href="/contatti.html">Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero hero--small" style="background:url('/images/hero-ansia.jpg') center/cover no-repeat;">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Ansia: Riconoscerla e gestirla</h1>
+      <p>Comprenderla è il primo passo per ritrovare equilibrio e serenità.</p>
+    </div>
+  </section>
+
+  <!-- Breadcrumbs -->
+  <nav class="container breadcrumbs" aria-label="Percorso">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li aria-current="page">Ansia: Riconoscerla e gestirla</li>
+    </ol>
+  </nav>
+
+  <!-- ARTICOLO -->
+  <main class="container article">
+    <header class="article-header">
+      <p class="eyebrow">Benessere psicologico</p>
+      <h2 class="visually-hidden">Articolo</h2>
+      <p class="lead">L’ansia non è il nemico: è un segnale. Quando impariamo ad ascoltarla, possiamo trasformarla in una risorsa che guida le nostre scelte con maggiore consapevolezza.</p>
+      <ul class="meta">
+        <li>Tempo di lettura: 5 minuti</li>
+        <li>Autrice: Dott.ssa Giusy D’Amato</li>
+      </ul>
+    </header>
+
+    <!-- TOC -->
+    <aside class="toc" aria-label="Indice dell’articolo">
+      <h3>In questo articolo</h3>
+      <ul>
+        <li><a href="#riconoscere">Riconoscere l’ansia</a></li>
+        <li><a href="#segnali">Segnali e sintomi comuni</a></li>
+        <li><a href="#perche">Perché compare</a></li>
+        <li><a href="#gestione">Strategie di gestione</a></li>
+        <li><a href="#quando-aiuto">Quando chiedere aiuto</a></li>
+        <li><a href="#faq">Domande frequenti</a></li>
+      </ul>
+    </aside>
+
+    <article class="prose">
+      <h2 id="riconoscere">Riconoscere l’ansia</h2>
+      <p>L’ansia è una risposta naturale del corpo e della mente alle situazioni percepite come impegnative. Diventa un ostacolo quando è persistente, intensa o interferisce con il sonno, il lavoro e le relazioni.</p>
+
+      <h2 id="segnali">Segnali e sintomi comuni</h2>
+      <ul class="checklist">
+        <li>Tensione muscolare, nodo allo stomaco, tachicardia</li>
+        <li>Pensieri ricorrenti e difficoltà a “staccare”</li>
+        <li>Irritabilità, fatica a concentrarsi, sonno irregolare</li>
+        <li>Sensazione di allerta continua o paura di perdere il controllo</li>
+      </ul>
+      <p class="note">💡 <strong>Tip:</strong> Tenere un breve diario dei momenti in cui l’ansia aumenta aiuta a individuare schemi e situazioni ricorrenti.</p>
+
+      <h2 id="perche">Perché compare</h2>
+      <p>Spesso emerge in periodi di cambiamento, sovraccarico di responsabilità, conflitti relazionali o quando sentiamo di dover mantenere tutto sotto controllo. Vederla come un messaggio — non come un difetto — apre la strada a risposte più efficaci.</p>
+
+      <h2 id="gestione">Strategie di gestione</h2>
+      <div class="grid-2">
+        <div>
+          <h3>1) Regolare il corpo</h3>
+          <ul class="bullet">
+            <li><strong>Respirazione 4–6:</strong> inspira 4 secondi, espira 6 per 2–3 minuti.</li>
+            <li><strong>Radicamento 5-4-3-2-1:</strong> elenca 5 cose che vedi, 4 che senti, 3 che tocchi, 2 che annusi, 1 che assapori.</li>
+            <li>Routine di sonno e movimento regolare.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>2) Chiarire i pensieri</h3>
+          <ul class="bullet">
+            <li><strong>Domanda chiave:</strong> “Cosa mi sta chiedendo questa ansia di guardare?”</li>
+            <li><strong>Ristrutturazione gentile:</strong> sostituisci il “devo” con “posso/provo”.</li>
+            <li>Limita caffeina e doom-scrolling nelle ore serali.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="pull">Gestire l’ansia non significa eliminarla, ma imparare a <em>regolarla</em> per tornare a scegliere con libertà.</p>
+
+      <h2 id="quando-aiuto">Quando chiedere aiuto</h2>
+      <ul class="pill-list">
+        <li class="pill">Se limita lavoro, studio o relazioni</li>
+        <li class="pill">Se eviti situazioni importanti per paura</li>
+        <li class="pill">Se il corpo è sempre in allerta</li>
+        <li class="pill">Se senti che da sola/o non basta</li>
+      </ul>
+      <p>La psicoterapia offre uno spazio sicuro per comprendere l’origine dell’ansia e costruire strumenti su misura.</p>
+
+      <h2 id="faq">Domande frequenti</h2>
+      <details>
+        <summary>L’ansia può andare via da sola?</summary>
+        <p>A volte si riduce con il passare di un periodo stressante. Se però persiste o ritorna spesso, è utile un supporto professionale.</p>
+      </details>
+      <details>
+        <summary>Quante sedute servono?</summary>
+        <p>Dipende dalla persona e dagli obiettivi. Nelle prime sedute definiamo insieme un percorso e verifichiamo periodicamente i progressi.</p>
+      </details>
+    </article>
+  </main>
+
+  <!-- CTA riutilizza le classi del tema -->
+  <section class="cta">
+    <div class="container">
+      <h2>Prendersi cura dell’ansia è un atto di gentilezza verso di te</h2>
+      <p style="margin-bottom:1.2rem">Se desideri iniziare, possiamo farlo insieme nel mio studio a Napoli o online.</p>
+      <a class="btn-secondary" href="/contatti.html">Prenota un colloquio</a>
+    </div>
+  </section>
+
+  <!-- Footer (se già globale, rimuovi questo blocco) -->
+  <footer class="site-footer">
+    <div class="container footer-flex">
+      <p>© <span id="year"></span> Dott.ssa Giusy D’Amato — Psicologa Psicoterapeuta</p>
+      <p>Studio: Via Duomo 184, Napoli — Tel. 351 440 6526</p>
+    </div>
+  </footer>
+
+  <!-- JS minimo per il drawer -->
+  <script>
+    const t = document.getElementById('nav-toggle');
+    const nav = document.querySelector('.main-nav');
+    if (t && nav) {
+      t.addEventListener('click', () => {
+        t.classList.toggle('open');
+        nav.classList.toggle('open');
+        const expanded = t.getAttribute('aria-expanded') === 'true';
+        t.setAttribute('aria-expanded', String(!expanded));
+      });
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
