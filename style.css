@@ -162,3 +162,72 @@ details p{margin-top:.7rem;}
 @media(max-width:600px){
   .whatsapp-float{width:50px;height:50px;bottom:15px;right:15px;}
 }
+/* ===== BLOG ADD-ONS (caricato solo nelle pagine articolo) ===== */
+
+/* Accessibilità per intestazioni nascoste ma leggibili da screen reader */
+.visually-hidden{
+  position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+/* Breadcrumbs */
+.breadcrumbs{padding:1.2rem 0 0.6rem;}
+.breadcrumbs ol{display:flex;flex-wrap:wrap;gap:.5rem;color:#666;font-size:.95rem;}
+.breadcrumbs a{color:inherit;}
+.breadcrumbs li+li::before{content:"/";margin:0 .5rem;color:#bbb;}
+
+/* Contenitore articolo */
+.article-header{margin-bottom:1.4rem;}
+.eyebrow{font-family:var(--sans);font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;color:#777;}
+.lead{font-size:1.2rem;max-width:60ch;margin-top:.6rem;}
+.meta{display:flex;gap:1rem;color:#777;font-size:.9rem;margin-top:.6rem;}
+
+/* Indice */
+.toc{border:1px solid #eaeaea;background:#fff;border-radius:8px;padding:1rem 1.2rem;margin:1.2rem 0 2rem;}
+.toc h3{font-size:1rem;margin-bottom:.6rem;}
+.toc ul{display:grid;gap:.4rem;}
+.toc a{border-bottom:1px dashed rgba(0,0,0,.08);}
+.toc a:hover{border-color:var(--accent);}
+
+/* Corpo testo “prose” */
+.prose p{margin:.9rem 0;max-width:70ch;}
+.prose h2{margin-top:2rem;}
+.prose h3{font-family:var(--serif);margin:1rem 0 .4rem;font-size:1.25rem;}
+.prose ul{list-style:disc;margin:0 0 1rem 1.2rem;}
+.prose li{margin:.4rem 0;}
+
+/* Liste utili */
+.checklist li::marker{color:var(--accent);}
+.bullet li::marker{color:#bbb;}
+
+/* Note e callout */
+.note{border-left:4px solid var(--accent);background:#fff;padding:.8rem 1rem;border-radius:6px;margin:1rem 0;color:#333;}
+.pull{font-family:var(--serif);font-size:1.35rem;line-height:1.4;margin:1.4rem 0;padding-left:.6rem;border-left:3px solid rgba(0,0,0,.07);}
+
+/* Griglia due colonne per sezioni pratiche */
+.grid-2{display:grid;gap:1.2rem;margin:1rem 0;}
+@media(min-width:900px){.grid-2{grid-template-columns:1fr 1fr;}}
+
+/* Pill tags */
+.pill-list{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0;}
+.pill{padding:.45rem .75rem;border:1px solid #e3e3e3;border-radius:999px;background:#fff;font-size:.95rem;}
+.pill::before{content:"• ";color:var(--accent);}
+
+/* Link nel corpo */
+.prose a{color:var(--primary);border-bottom:1px solid rgba(0,0,0,.1);}
+.prose a:hover{border-color:var(--accent);}
+
+/* Immagini nell’articolo */
+.prose img{margin:1rem 0;border-radius:8px;}
+
+/* Tabelle (se in futuro) */
+.prose table{width:100%;border-collapse:collapse;margin:1rem 0;background:#fff;border:1px solid #eee;}
+.prose th,.prose td{padding:.7rem;border-bottom:1px solid #eee;text-align:left;}
+.prose th{font-family:var(--serif);}
+
+/* Spaziatura extra su mobile */
+@media(max-width:600px){
+  .lead{font-size:1.1rem;}
+  .toc{padding:.9rem 1rem;}
+}
+
