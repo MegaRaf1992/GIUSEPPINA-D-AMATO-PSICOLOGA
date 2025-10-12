@@ -3,19 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog – Dott.ssa Giusy D'Amato</title>
-
+  
+  <!-- SEO Meta Tags -->
+  <title>Blog Psicologia - Consigli e Articoli | Dott.ssa Giusy D'Amato</title>
+  <meta name="description" content="Leggi gli articoli di psicologia della Dott.ssa Giusy D'Amato: consigli su ansia, depressione, relazioni e benessere psicologico. Blog aggiornato con contenuti utili.">
+  <meta name="keywords" content="blog psicologia, articoli ansia, consigli psicologici, salute mentale, benessere psicologico, psicologa Napoli blog">
+  <meta name="author" content="Dott.ssa Giusy D'Amato">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Blog Psicologia - Dott.ssa Giusy D'Amato">
+  <meta property="og:description" content="Articoli e consigli di psicologia per il tuo benessere mentale. Approfondimenti su ansia, depressione e relazioni.">
+  <meta property="og:image" content="https://www.psicologadamato.it/images/blog-header.jpg">
+  <meta property="og:url" content="https://www.psicologadamato.it/blog.html">
+  <meta property="og:type" content="website">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.psicologadamato.it/blog.html">
+  
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Structured Data - Blog -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog di Psicologia - Dott.ssa Giusy D'Amato",
+    "description": "Articoli e consigli di psicologia per il benessere mentale",
+    "url": "https://www.psicologadamato.it/blog.html",
+    "author": {
+      "@type": "Person",
+      "name": "Dott.ssa Giusy D'Amato",
+      "jobTitle": "Psicologa e Psicoterapeuta",
+      "url": "https://www.psicologadamato.it"
+    },
+    "publisher": {
+      "@type": "Organization", 
+      "name": "Studio Psicologia Dott.ssa Giusy D'Amato",
+      "url": "https://www.psicologadamato.it"
+    },
+    "inLanguage": "it-IT"
+  }
+  </script>
 </head>
 
 <body>
-  <!-- ===== HEADER ===== -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container nav-wrapper">
-      <a class="brand" href="index.html">Dott.ssa Giusy D’Amato</a>
-
-      <nav class="main-nav" id="main-nav">
+      <a class="brand" href="index.html" aria-label="Homepage Dott.ssa Giusy D'Amato">Dott.ssa Giusy D'Amato</a>
+      
+      <nav class="main-nav" id="main-nav" role="navigation" aria-label="Menu principale">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a class="active" href="blog.html">Blog</a></li>
@@ -23,80 +64,228 @@
           <li><a href="contatti.html">Contatti</a></li>
         </ul>
       </nav>
-
+      
       <button id="nav-toggle" aria-label="Apri menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <!-- ===== HERO LIGHT ===== -->
+  <!-- Hero Section -->
   <section class="hero hero--small">
     <div class="overlay"></div>
     <div class="container hero-content">
-      <h1>Blog</h1>
-      <p>Articoli su psicologia, relazioni e benessere emotivo.</p>
+      <h1>Blog di Psicologia</h1>
+      <p>Articoli, consigli e approfondimenti per il tuo benessere psicologico</p>
     </div>
   </section>
 
-  <!-- ===== GRIGLIA DI CARD ===== -->
-  <section class="section-light">
+  <!-- Main Content -->
+  <main class="section-light">
     <div class="container">
+      <header class="blog-header">
+        <p class="lead">Esplora i miei articoli dedicati al benessere mentale, alla crescita personale e alla salute psicologica. Troverai consigli pratici, approfondimenti scientifici e riflessioni per migliorare la qualità della tua vita.</p>
+      </header>
+      
+      <!-- Blog Grid -->
       <div class="blog-grid">
+        
+        <!-- Articolo Ansia - AGGIORNATO CON NUOVO LINK -->
+        <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+          <a href="come-riconoscere-gestire-ansia-guida-completa.html" aria-label="Leggi l'articolo completo sull'ansia">
+            <img src="images/ansia-articolo-copertina.jpg" 
+                 alt="Donna che pratica tecniche di rilassamento per gestire l'ansia in un ambiente sereno"
+                 loading="lazy"
+                 itemprop="image">
+          </a>
+          
+          <div class="blog-card-content">
+            <h2 itemprop="headline">
+              <a href="come-riconoscere-gestire-ansia-guida-completa.html">Come Riconoscere e Gestire l'Ansia: Una Guida Completa</a>
+            </h2>
+            
+            <div class="meta">
+              <time datetime="2025-10-12" itemprop="datePublished">12 Ottobre 2025</time>
+              <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span itemprop="name">Dott.ssa Giusy D'Amato</span>
+              </span>
+            </div>
+            
+            <p itemprop="description">
+              Scopri come identificare i sintomi dell'ansia, comprendere le sue cause e imparare tecniche efficaci per gestirla. Un approccio professionale per ritrovare la serenità nella vita quotidiana.
+            </p>
+            
+            <div class="tags">
+              <span class="tag">Ansia</span>
+              <span class="tag">Gestione Emotiva</span>
+              <span class="tag">Benessere</span>
+            </div>
+            
+            <meta itemprop="url" content="https://www.psicologadamato.it/come-riconoscere-gestire-ansia-guida-completa.html">
+            <meta itemprop="dateModified" content="2025-10-12">
+          </div>
+        </article>
 
-        <a class="blog-card" href="Aricolo-Ansia.html">
-          <img src="images/ansia.jpg" alt="Mani che si stringono">
-          <h3>Ansia: Riconoscerla e gestirla</h3>
-          <p>I segnali da non ignorare e i primi passi per affrontarla.</p>
-        </a>
+        <!-- Articolo Terapia di Coppia -->
+        <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+          <a href="terapia-coppia-quando-serve.html" aria-label="Leggi l'articolo sulla terapia di coppia">
+            <img src="images/terapia-coppia-copertina.jpg" 
+                 alt="Coppia che dialoga serenamente durante una seduta di terapia di coppia"
+                 loading="lazy"
+                 itemprop="image">
+          </a>
+          
+          <div class="blog-card-content">
+            <h2 itemprop="headline">
+              <a href="terapia-coppia-quando-serve.html">Quando la Terapia di Coppia Può Salvare la Relazione</a>
+            </h2>
+            
+            <div class="meta">
+              <time datetime="2025-10-05" itemprop="datePublished">5 Ottobre 2025</time>
+              <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span itemprop="name">Dott.ssa Giusy D'Amato</span>
+              </span>
+            </div>
+            
+            <p itemprop="description">
+              Quando i conflitti diventano ripetitivi e la comunicazione si interrompe, la terapia di coppia può offrire nuovi strumenti per ricostruire l'armonia relazionale.
+            </p>
+            
+            <div class="tags">
+              <span class="tag">Terapia di Coppia</span>
+              <span class="tag">Relazioni</span>
+              <span class="tag">Comunicazione</span>
+            </div>
+            
+            <meta itemprop="url" content="https://www.psicologadamato.it/terapia-coppia-quando-serve.html">
+            <meta itemprop="dateModified" content="2025-10-05">
+          </div>
+        </article>
 
-        <a class="blog-card" href="articolo-coppia.html">
-          <img src="images/coppia.jpg" alt="Coppia che dialoga">
-          <h3>Dialogare in coppia senza conflitti</h3>
-          <p>Strategie per comunicare in modo costruttivo.</p>
-        </a>
+        <!-- Articolo Adolescenti -->
+        <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+          <a href="supporto-adolescenti-gestione-emozioni.html" aria-label="Leggi l'articolo sul supporto agli adolescenti">
+            <img src="images/adolescenti-copertina.jpg" 
+                 alt="Adolescente che esprime le proprie emozioni in un colloquio psicologico"
+                 loading="lazy"
+                 itemprop="image">
+          </a>
+          
+          <div class="blog-card-content">
+            <h2 itemprop="headline">
+              <a href="supporto-adolescenti-gestione-emozioni.html">Supportare gli Adolescenti nella Gestione delle Emozioni</a>
+            </h2>
+            
+            <div class="meta">
+              <time datetime="2025-09-28" itemprop="datePublished">28 Settembre 2025</time>
+              <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span itemprop="name">Dott.ssa Giusy D'Amato</span>
+              </span>
+            </div>
+            
+            <p itemprop="description">
+              L'adolescenza è un periodo di grandi cambiamenti emotivi. Scopri come aiutare i ragazzi a navigare questa fase delicata con consapevolezza e strumenti adeguati.
+            </p>
+            
+            <div class="tags">
+              <span class="tag">Adolescenti</span>
+              <span class="tag">Emozioni</span>
+              <span class="tag">Crescita</span>
+            </div>
+            
+            <meta itemprop="url" content="https://www.psicologadamato.it/supporto-adolescenti-gestione-emozioni.html">
+            <meta itemprop="dateModified" content="2025-09-28">
+          </div>
+        </article>
 
-        <a class="blog-card" href="articolo-autostima.html">
-          <img src="images/autostima.jpg" alt="Ragazza sorridente">
-          <h3>Autostima negli adolescenti</h3>
-          <p>Come sostenere i ragazzi a credere in sé stessi.</p>
-        </a>
+        <!-- Articolo EMDR -->
+        <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+          <a href="emdr-terapia-traumi-efficace.html" aria-label="Leggi l'articolo sulla terapia EMDR">
+            <img src="images/emdr-terapia-copertina.jpg" 
+                 alt="Sessione di terapia EMDR in studio professionale per il trattamento dei traumi"
+                 loading="lazy"
+                 itemprop="image">
+          </a>
+          
+          <div class="blog-card-content">
+            <h2 itemprop="headline">
+              <a href="emdr-terapia-traumi-efficace.html">EMDR: Come Elaborare i Traumi in Modo Efficace</a>
+            </h2>
+            
+            <div class="meta">
+              <time datetime="2025-09-20" itemprop="datePublished">20 Settembre 2025</time>
+              <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span itemprop="name">Dott.ssa Giusy D'Amato</span>
+              </span>
+            </div>
+            
+            <p itemprop="description">
+              La terapia EMDR rappresenta un approccio innovativo per il trattamento dei traumi. Scopri come funziona e quando può essere la soluzione più adatta.
+            </p>
+            
+            <div class="tags">
+              <span class="tag">EMDR</span>
+              <span class="tag">Trauma</span>
+              <span class="tag">Terapia</span>
+            </div>
+            
+            <meta itemprop="url" content="https://www.psicologadamato.it/emdr-terapia-traumi-efficace.html">
+            <meta itemprop="dateModified" content="2025-09-20">
+          </div>
+        </article>
 
-        <!-- Aggiungi altre card quando vuoi -->
       </div>
     </div>
+  </main>
+
+  <!-- Call to Action -->
+  <section class="cta">
+    <div class="container">
+      <h2>Hai bisogno di supporto professionale?</h2>
+      <p>Non esitare a contattarmi per una consulenza personalizzata.</p>
+      <a href="https://www.miodottore.it/giusy-d-amato/psicologo/napoli" 
+         class="btn-secondary" 
+         target="_blank" 
+         rel="noopener noreferrer">Prenota un colloquio</a>
+    </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-flex">
-      <p>© 2025 Dott.ssa Giusy D'Amato – Psicologa</p>
+      <p>&copy; 2025 Dott.ssa Giusy D'Amato – Psicologa e Psicoterapeuta</p>
     </div>
   </footer>
 
-  <!-- ===== WHATSAPP BUTTON ===== -->
-  <a class="whatsapp-float"
-     href="https://wa.me/393514406526?text=Buongiorno%20Dottoressa%20D%27Amato%2C%20vorrei%20fissare%20un%20colloquio"
-     target="_blank" rel="noopener" aria-label="Chatta su WhatsApp">
-    <img src="images/whatsapp.svg" alt="Icona WhatsApp">
+  <!-- WhatsApp Button -->
+  <a class="whatsapp-float" 
+     href="https://wa.me/393514406526?text=Buongiorno%20Dottoressa%20D%27Amato%2C%20vorrei%20fissare%20un%20colloquio" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Contattami su WhatsApp">
+    <img src="images/whatsapp.svg" alt="Icona WhatsApp" width="60" height="60">
   </a>
 
-  <!-- ===== NAV SCRIPT ===== -->
+  <!-- JavaScript -->
   <script>
+    // Navigation toggle
     const nav = document.getElementById('main-nav');
     const btn = document.getElementById('nav-toggle');
+    
     btn.addEventListener('click', () => {
       nav.classList.toggle('open');
       btn.classList.toggle('open');
       btn.setAttribute('aria-expanded', nav.classList.contains('open'));
     });
-    document.querySelectorAll('#main-nav a').forEach(link =>
+    
+    // Close menu when clicking on links
+    document.querySelectorAll('#main-nav a').forEach(link => {
       link.addEventListener('click', () => {
         nav.classList.remove('open');
-        btn.classList.remove('open');
+        btn.classList.remove('open'); 
         btn.setAttribute('aria-expanded', 'false');
-      })
-    );
+      });
+    });
   </script>
 </body>
 </html>
