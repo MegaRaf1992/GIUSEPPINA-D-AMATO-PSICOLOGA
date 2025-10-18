@@ -453,8 +453,7 @@ img {
 }
 
 .toc.sticky {
-  position: sticky;
-  top: 100px;
+  position: static;
 }
 
 .toc h3 {
@@ -2643,8 +2642,7 @@ img {
 }
 
 .toc.sticky {
-  position: sticky;
-  top: 90px;
+  position: static;
 }
 
 .toc h3 {
@@ -3810,3 +3808,4 @@ details p {
     page-break-inside: avoid;
   }
 }
+
